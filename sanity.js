@@ -41,7 +41,10 @@ const serializers = {
         youtube: ({node}) => {
             const { url } = node
             const id = getYouTubeId(url)
-            return (<YouTube videoId={id} />)
+            return (<YouTube  opts = {{
+                height: 'fit-content',
+                width: 'auto',
+            }} videoId={id} />)
         },
         inlineVideo: ({node}) => {
 
