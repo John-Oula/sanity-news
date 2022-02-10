@@ -38,11 +38,11 @@ export function toPlainText(blocks = []) {
 
 const serializers = {
     types: {
-        // youtube: ({node}) => {
-        //     const { url } = node
-        //     const id = getYouTubeId(url)
-        //     return (<YouTube videoId={id} />)
-        // },
+        youtube: ({node}) => {
+            const { url } = node
+            const id = getYouTubeId(url)
+            return (<YouTube videoId={id} />)
+        },
         inlineVideo: ({node}) => {
 
 
