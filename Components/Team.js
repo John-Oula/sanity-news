@@ -7,7 +7,7 @@ function Team({data}) {
     return (
         <Flex flexDirection={[`column`,`row`,`row`,`row`,`row`,]}>
             {
-                data?.members.map(each =>{
+                data?.members?.map(each =>{
                     return(
                         <Flex flexDirection={`column`} textAlign={`center`} justifyContent={`center`} p={5}>
                             <Circle overflow={`hidden`} size={`150pt`}>
