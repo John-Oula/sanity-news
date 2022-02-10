@@ -28,10 +28,10 @@ const NavigationBar = ({nav}) => {
     return (
 
         <Flex
-            bgColor={`#287b4f`}
+            bgColor={`#1e9339`}
             w={`100%`} h={`auto`} boxShadow={`lg`}>
 
-            <Container centerContent maxW={['container.sm', 'container.md', 'container.xl',]}>
+            <Container centerContent maxW={ 'container.xl'}>
 
 
                 {/*<Flex  display={["none", "none", "flex", "flex", "flex"]} flexDirection={`row`}>*/}
@@ -40,7 +40,7 @@ const NavigationBar = ({nav}) => {
                 {/*            cursor={`pointer`}*/}
                 {/*            fontSize={`sm`}*/}
                 {/*            borderRadius={`0px`}*/}
-                {/*            // borderColor={`#287b4f`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}*/}
+                {/*            // borderColor={`#1e9339`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}*/}
                 {/*            pl={`5`}*/}
                 {/*            pr={`5`} bgColor={`#ffffff`} alignItems={'center'} color={`#ffffff`}*/}
                 {/*        > <AiFillHome /> </Flex></Link>*/}
@@ -57,7 +57,7 @@ const NavigationBar = ({nav}) => {
                 {/*                            fontSize={`sm`}*/}
                 {/*                            borderRadius={`0px`}*/}
                 {/*                            h={`auto`}*/}
-                {/*                            // borderColor={`#287b4f`} borderLeftWidth={`0.5px`}*/}
+                {/*                            // borderColor={`#1e9339`} borderLeftWidth={`0.5px`}*/}
                 {/*                            pl={`5`}*/}
                 {/*                            pr={`5`} bgColor={`#ffffff`} alignItems={'center'} color={`#ffffff`}*/}
                 {/*                        >*/}
@@ -74,7 +74,7 @@ const NavigationBar = ({nav}) => {
                 {/*                    :*/}
                 {/*                    <Flex cursor={`pointer`} key={each?._id + index.toString()} fontSize={`sm`}*/}
                 {/*                          borderRadius={`0px`}*/}
-                {/*                          // borderColor={`#287b4f`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}*/}
+                {/*                          // borderColor={`#1e9339`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}*/}
                 {/*                          pl={`5`}*/}
                 {/*                          pr={`5`} bgColor={`#ffffff`} alignItems={'center'} color={`#ffffff`}>*/}
                 {/*                        <Link href={`/${each?.slug.current}`}><Text>{each?.title}</Text></Link>*/}
@@ -94,10 +94,10 @@ const NavigationBar = ({nav}) => {
                 {/*                <InputLeftElement*/}
 
                 {/*                    pointerEvents='none'*/}
-                {/*                    children={<SearchIcon color='#287b4f'/>}*/}
+                {/*                    children={<SearchIcon color='#1e9339'/>}*/}
                 {/*                />*/}
                 {/*                <Input onChange={(e) => setText(e.target.value)} color={`#444444`} type='text'*/}
-                {/*                       bgColor={`#ffffff`} border={`solid`} borderColor={`#287b4f`}*/}
+                {/*                       bgColor={`#ffffff`} border={`solid`} borderColor={`#1e9339`}*/}
                 {/*                       borderWidth={`2px`}/>*/}
                 {/*            </InputGroup>*/}
 
@@ -105,20 +105,20 @@ const NavigationBar = ({nav}) => {
                 {/*    </Flex>*/}
 
                 {/*</Flex>*/}
-                <Flex display={"flex"} flexDirection={`row`}>
-                    <Navbar collapseOnSelect expand="lg" bg="#287b4f" variant="light">
+                <Flex display={"flex"} alignItems={`center`}  flexDirection={`row`}>
+                    <Navbar collapseOnSelect expand="lg" bg="#1e9339" variant="light">
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
 <Nav >
-<Flex alignItems={`center`} flexDirection={[`column`,`column`,`row`,`row`,`row`,]}>
+<Flex justifyContent={`center`} flexDirection={[`column`,`column`,`row`,`row`,`row`,]}>
     <Link href={`/`}>
         <Flex
             cursor={`pointer`}
             fontSize={`sm`}
             borderRadius={`0px`}
-            // borderColor={`#287b4f`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
+            // borderColor={`#1e9339`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
             pl={`3`}
-            pr={`3`} bgColor={`#287b4f`} alignItems={'center'} color={`#ffffff`}
+            pr={`3`} bgColor={`#1e9339`} alignItems={'center'} color={`#ffffff`}
         ><AiFillHome /></Flex></Link>
     {
         nav?.map((each, index) => {
@@ -128,7 +128,7 @@ const NavigationBar = ({nav}) => {
                 <Menu>
 
                     <MenuButton key={each?._id + index.toString()} fontSize={`sm`}
-                                borderRadius={`0px`} borderColor={`#287b4f`}
+                                borderRadius={`0px`} borderColor={`#1e9339`}
                         // rightIcon={<ChevronDownIcon/>}
                                 borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
                                 pl={[0,0,3,3,5]}
@@ -157,25 +157,9 @@ const NavigationBar = ({nav}) => {
             )
         })
     }
-    <Flex >
-        <form  onSubmit={(e) => {
-            e.preventDefault()
-            history.push({pathname: '/search', query: {text: text}})
-        }} w={100} ml={10}>
-            <InputGroup >
-                <InputLeftElement
 
-                    pointerEvents='none'
-                    children={<SearchIcon color='#287b4f'/>}
-                />
-                <Input onChange={(e) => setText(e.target.value)} color={`#444444`} type='text'
-                       bgColor={`#ffffff`} border={`solid`} borderColor={`#BC1F28`}
-                       borderWidth={`1px`}/>
-            </InputGroup>
-
-        </form>
-    </Flex>
 </Flex>
+
 </Nav>
                         </Navbar.Collapse>
 
@@ -183,7 +167,24 @@ const NavigationBar = ({nav}) => {
 
 
 
+                    <Flex p={2} >
+                        <form  onSubmit={(e) => {
+                            e.preventDefault()
+                            history.push({pathname: '/search', query: {text: text}})
+                        }} w={`auto`} >
+                            <InputGroup >
+                                <InputLeftElement
 
+                                    pointerEvents='none'
+                                    children={<SearchIcon color='#1e9339'/>}
+                                />
+                                <Input onChange={(e) => setText(e.target.value)} color={`#444444`} type='text'
+                                       bgColor={`#ffffff`} border={`solid`} borderColor={`#BC1F28`}
+                                       borderWidth={`1px`}/>
+                            </InputGroup>
+
+                        </form>
+                    </Flex>
                 </Flex>
             </Container>
         </Flex>

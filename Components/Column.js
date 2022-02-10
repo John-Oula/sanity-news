@@ -31,7 +31,7 @@ function Column({position,post}) {
                    border={`solid`} borderWidth={[`0px`,0,`1px`,`1px`,`1px`]}
                    borderColor={` #d6d9dc`} flexDirection={`column`}>
                 <Box color={`white`}
-                     bgColor={ "#287b4f"}>
+                     bgColor={ "#1e9339"}>
                     <Heading as='h4' size='md' p={5}
                              color={ `white`}>
                         { cardTitle}

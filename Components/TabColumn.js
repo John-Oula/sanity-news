@@ -14,7 +14,7 @@ function TabColumn({post,firstPosition,secondPosition}) {
                             if(each?.position === firstPosition || each?.position === secondPosition ){
 
                                 return(
-                                    <Tab key={each._id} _selected={{ color: 'white', bg: `#287b4f` }}>{each.title}</Tab>
+                                    <Tab key={each._id} _selected={{ color: 'white', bg: `#1e9339` }}>{each.title}</Tab>
                                 )
                             }
                             else null

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4a1e0641-abb3-40a1-8d12-d9e0a92f9265" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/Desktop.iml" afterDir="false" />
@@ -174,17 +177,6 @@
       <change afterPath="$PROJECT_DIR$/../newsBlog/src/index.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../node-v14.0.0-x64.msi" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../node-v14.1.0-win-x64.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node14/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node14/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node14/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node14/install_tools.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node14/node.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node14/node_etw_provider.man" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node14/nodevars.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node14/npm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node14/npm.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node14/npx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node14/npx.cmd" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../react/.idea/react.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../reactapp/.idea/reactapp.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../realtor/.babelrc" afterDir="false" />
@@ -268,6 +260,7 @@
       <change afterPath="$PROJECT_DIR$/../sanityblog/static/.gitkeep" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../sanityblog/static/favicon.ico" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../sanityblog/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sanityblog/vercel.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../sanityblog/yarn-error.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../sanityblog/yarn.lock" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../stackiteWeb/.idea/stackiteWeb.iml" afterDir="false" />
@@ -291,7 +284,9 @@
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/youtube-react-admin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/registration/registration-form/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Column.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/NavigationBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/TabColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/TabColumn.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,7 +314,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../sanityblog/schemas" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -336,7 +334,7 @@
       <recent name="C:\Users\ASUS\Desktop\blog\pages\search" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.start">
     <configuration default="true" type="ReactNative" factoryName="React Native">
       <node-interpreter value="node" />
       <react-native value="$USER_HOME$/AppData/Roaming/npm/node_modules/react-native-cli" />
@@ -386,11 +384,16 @@
       <workItem from="1643810205742" duration="32480000" />
       <workItem from="1644084396122" duration="8128000" />
       <workItem from="1644132604594" duration="84599000" />
-      <workItem from="1644396217936" duration="52311000" />
+      <workItem from="1644396217936" duration="55566000" />
+      <workItem from="1644498995866" duration="13695000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
