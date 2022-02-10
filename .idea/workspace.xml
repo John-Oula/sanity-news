@@ -290,6 +290,8 @@
       <change afterPath="$PROJECT_DIR$/../webthree/webthree/public/hero_image.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/youtube-react-admin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/registration/registration-form/index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -384,7 +386,7 @@
       <workItem from="1643810205742" duration="32480000" />
       <workItem from="1644084396122" duration="8128000" />
       <workItem from="1644132604594" duration="84599000" />
-      <workItem from="1644396217936" duration="51789000" />
+      <workItem from="1644396217936" duration="52311000" />
     </task>
     <servers />
   </component>
