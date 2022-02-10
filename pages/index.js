@@ -57,7 +57,7 @@ export default function Home({navigation, posts, carousel, partners}) {
     )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
 
     const partners = await client.fetch(`*[_type == "partners"]`)

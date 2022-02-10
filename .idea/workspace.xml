@@ -284,7 +284,7 @@
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/youtube-react-admin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +299,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="24YaqI0CTtjuarLm6ebwYXMUcGN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -383,7 +383,7 @@
       <workItem from="1644084396122" duration="8128000" />
       <workItem from="1644132604594" duration="84599000" />
       <workItem from="1644396217936" duration="55566000" />
-      <workItem from="1644498995866" duration="20021000" />
+      <workItem from="1644498995866" duration="22600000" />
     </task>
     <servers />
   </component>
