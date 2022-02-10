@@ -34,8 +34,8 @@ const NavigationBar = ({nav}) => {
 
             <Container maxW={'container.xl'}>
 
-                <Flex display={"flex"} alignItems={`cnter`} flexDirection={`row`}>
-                    <Navbar collapseOnSelect expand="md" bg="#1e9339" variant="light">
+                <Flex display={"flex"}  flexDirection={`row`}>
+                    <Navbar collapseOnSelect expand="lg" bg="#1e9339" variant="light">
                         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
 
                         <Navbar.Collapse id="responsive-navbar-nav">
