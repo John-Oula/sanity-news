@@ -45,8 +45,8 @@ function Posts({posts}) {
 
 export default Posts
 
-export async function getStaticProps(context) {
-    console.log(context.params)
+export async function getServerSideProps(context) {
+
     const posts = await client.fetch(postQuery)
     
     return { props :{posts :posts}}
