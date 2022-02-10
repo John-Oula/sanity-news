@@ -299,7 +299,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="24YaqI0CTtjuarLm6ebwYXMUcGN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -383,7 +383,7 @@
       <workItem from="1644084396122" duration="8128000" />
       <workItem from="1644132604594" duration="84599000" />
       <workItem from="1644396217936" duration="55566000" />
-      <workItem from="1644498995866" duration="15714000" />
+      <workItem from="1644498995866" duration="16542000" />
     </task>
     <servers />
   </component>

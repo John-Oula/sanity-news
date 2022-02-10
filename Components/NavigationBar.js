@@ -101,14 +101,14 @@ const NavigationBar = ({nav}) => {
                             <form onSubmit={(e) => {
                                 e.preventDefault()
                                 history.push({pathname: '/search', query: {text: text}})
-                            }} w={`auto`}>
+                            }} w={`100%`}>
                                 <InputGroup>
                                     <InputLeftElement
 
                                         pointerEvents='none'
                                         children={<SearchIcon color='#1e9339'/>}
                                     />
-                                    <Input onChange={(e) => setText(e.target.value)} color={`#444444`} type='text'
+                                    <Input w={`100%`} onChange={(e) => setText(e.target.value)} color={`#444444`} type='text'
                                            bgColor={`#ffffff`} border={`solid`} borderColor={`#BC1F28`}
                                            borderWidth={`1px`}/>
                                 </InputGroup>
