@@ -18,7 +18,6 @@ function Forms({data}) {
         setLoading(true)
 
 
-
         await client.create({
             ...values,
             _type: data?.formType === 'cv-form' ? 'cv_upload' : 'users'
@@ -33,13 +32,13 @@ function Forms({data}) {
                         // Here you can decide what to do with the returned asset document.
                         // If you want to set a specific asset field you can to the following:
                         console.log(asset)
-                        if (data?.formType === 'cv-form'){
+                        if (data?.formType === 'cv-form') {
                             const motivationLetter = values.motivation_letter[0]
                             return client.assets
                                 .upload('file', motivationLetter, {
                                     filename: motivationLetter.name
                                 })
-                                .then(newAsset =>{
+                                .then(newAsset => {
                                     console.log(newAsset)
                                     return client
                                         .patch(response._id)
@@ -51,7 +50,7 @@ function Forms({data}) {
                                                     _ref: newAsset._id
                                                 }
                                             }
-                                        ,cv: {
+                                            , cv: {
                                                 _type: 'file',
                                                 asset: {
                                                     _type: "reference",
@@ -60,13 +59,14 @@ function Forms({data}) {
                                             }
                                         })
                                         .commit()
+
                                 })
-                                .catch(error =>{
+                                .then(()=>  router.push('/post/message'))
+                                .catch(error => {
                                     setLoading(false)
                                 })
 
-                        }
-                        else return client
+                        } else return client
                             .patch(response._id)
                             .set({
                                 cv: {
@@ -78,24 +78,18 @@ function Forms({data}) {
                                 }
                             })
                             .commit()
-
-                    .then(() => {
-                        setLoading(false)
-                        router.push('/post/message')
-                    })
-                            .catch(error =>{
+                            .then(() => {
+                                setLoading(false)
+                                router.push('/post/message')
+                            })
+                            .catch(error => {
                                 setLoading(false)
                             })
-            })
-                    .catch(error =>{
+                    })
+                    .catch(error => {
                         setLoading(false)
                     })
             })
-
-
-
-
-
 
 
         // fetch('/api/createUser', {
@@ -110,7 +104,7 @@ function Forms({data}) {
 
             <FormControl>
                 {
-                    data?.fields?.map((each,index) => {
+                    data?.fields?.map((each, index) => {
                         return (
                             <Box key={each._key}>
                                 <FormLabel>
@@ -122,7 +116,8 @@ function Forms({data}) {
                                             <Select {...register(each?.slug?.current)} placeholder='Select option'>
                                                 {each.selectOptions.map((option) => (
 
-                                                    <option key={option._key} value={option?.title}>{option?.title}</option>
+                                                    <option key={option._key}
+                                                            value={option?.title}>{option?.title}</option>
 
 
                                                 ))}
@@ -132,9 +127,9 @@ function Forms({data}) {
                                         each?.fieldType === 'text' ?
 
 
-                                      <>
-                                          <Input  {...register( each?.slug?.current)} type={`text`}/>
-                                      </>
+                                            <>
+                                                <Input  {...register(each?.slug?.current)} type={`text`}/>
+                                            </>
 
                                             :
                                             each?.fieldType === 'file' ?
@@ -164,13 +159,14 @@ function Forms({data}) {
                     })
                 }
 
-                    </FormControl>
+            </FormControl>
 
-                    <Button  colorScheme={`green`} isLoading={loading} value={`submit`} type={`submit`} onClick={handleSubmit(onSubmit)}  > Submit </Button>
+            <Button colorScheme={`green`} isLoading={loading} value={`submit`} type={`submit`}
+                    onClick={handleSubmit(onSubmit)}> Submit </Button>
 
 
-                    </Flex>
-                    );
-                }
+        </Flex>
+    );
+}
 
 export default Forms;
