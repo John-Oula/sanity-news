@@ -20,7 +20,8 @@ function MyApp({ Component, pageProps }) {
                        </Layout>
 
 
-                </ChakraProvider> </ContextWrapper>
+                </ChakraProvider>
+            </ContextWrapper>
         </>
     )
 }

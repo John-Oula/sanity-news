@@ -7,7 +7,7 @@ import {PortableText} from "../sanity";
 
 function Article({data}) {
     return (
-        <Box border={`solid`} w={`100%`}  borderWidth={`1px`} borderColor={` #d6d9dc`} flexDirection={`column`} >
+        <Box mb={10} border={`solid`} w={`100%`}  borderWidth={`1px`} borderColor={` #d6d9dc`} flexDirection={`column`} >
             <Flex border={`solid`}  borderWidth={`1px`} borderColor={` #d6d9dc`} flexDirection={`column`} >
 
                 <Box border={`solid`} p={3} borderWidth={`1px`}

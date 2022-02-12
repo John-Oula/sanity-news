@@ -63,7 +63,7 @@ export async function getServerSideProps() {
     const partners = await client.fetch(`*[_type == "partners"]`)
 
     const posts = await client.fetch(`
-*[_type == "heading" ] {title,position,
+*[_type == "heading" && featured != false] {title,position,
 "posts": *[_type == "post" && references(^._id)]{
               title,slug,body,_id,
                   "category":category->title,

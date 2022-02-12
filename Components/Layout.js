@@ -26,15 +26,17 @@ function Layout({children}) {
     Router.events.on('routeChangeComplete', () => {
         NProgress.done();
     });
-    const headerQuery = `*[_type == "menu" ] {title,_id,slug,submenu,dropdown,list,single,
-"category": category->title }`
+    const headerQuery = `*[_type == "navigationMenu" ][0]{
+  menuItems[]->
+}`
     const footerQuery = `*[_type == "footer" ] {title,_id,slug }`
     useEffect(() => {
 
         client.fetch(headerQuery)
             .then((res) => {
 
-                setLinks(res)
+
+                setLinks(res.menuItems)
                 client.fetch(footerQuery)
                     .then((res) => {
 

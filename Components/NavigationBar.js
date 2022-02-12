@@ -24,6 +24,7 @@ import {AiFillHome} from "react-icons/ai";
 const NavigationBar = ({nav}) => {
     const [text, setText] = useState('');
     const history = useRouter()
+    console.log(nav)
 
 
     return (
@@ -54,7 +55,9 @@ const NavigationBar = ({nav}) => {
                                     {
                                         nav?.map((each, index) => {
                                             return (
-
+                                                <>
+                                                {
+                                                    each?.dropdown ?
 
                                                 <Menu>
 
@@ -72,7 +75,8 @@ const NavigationBar = ({nav}) => {
                                                                 color={`#ffffff`}>
 
                                                         <Link
-                                                            href={`/${each?.slug?.current}`}>{each?.title}</Link><ChevronDownIcon ml={2}/>
+                                                            href={`/${each?.slug?.current}`}>{each?.title}</Link><ChevronDownIcon
+                                                        ml={2}/>
                                                     </MenuButton>
                                                     <MenuList>
 
@@ -80,14 +84,24 @@ const NavigationBar = ({nav}) => {
                                                             each?.submenu && each?.submenu.map(link => (
                                                                 <MenuItem w={[`100%`, `100%`, `100%`, `fit-content`]}
                                                                           key={link?._id}><Link
-                                                                    href={`/${each?.category}/${link?.slug?.current}`}>{link?.title}</Link></MenuItem>))
+                                                                    href={`/${each?.slug?.current}/${link?.slug?.current}`}>{link?.title}</Link></MenuItem>))
                                                         }
 
 
                                                     </MenuList>
                                                 </Menu>
+                                                :
+                                                                    <Flex cursor={`pointer`} key={each?._id + index.toString()} fontSize={`sm`}
+                                                                          borderRadius={`0px`}
+                                                                          // borderColor={`white`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
+                                                                          pl={`5`}
+                                                                          pr={`5`} color={`white`} alignItems={'center'} bgColor={`#1e9339`}>
+                                                                        <Text><Link href={`/${each?.slug?.current}`}>{each?.title}</Link></Text>
+                                                                    </Flex>
 
+                                        }
 
+                                                </>
                                             )
                                         })
                                     }

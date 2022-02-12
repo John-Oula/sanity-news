@@ -57,7 +57,7 @@ export async function getStaticPaths() {
 
 }
 
-export async function getServerSideProps({params}) {
+export async function getStaticProps({params}) {
     console.log(params)
 
     const {slug} = params;
