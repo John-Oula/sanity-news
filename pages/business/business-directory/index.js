@@ -72,8 +72,8 @@ export default function BusinessDirectory({posts}) {
                                     <MenuList>
                                         <MenuItem>Most Popular</MenuItem>
                                         <MenuItem>Newest</MenuItem>
-                                        <MenuItem>'Company Name' ascending</MenuItem>
-                                        <MenuItem>'Company Name' descending</MenuItem>
+                                        <MenuItem>Company Name ascending</MenuItem>
+                                        <MenuItem>Company Name descending</MenuItem>
 
                                     </MenuList>
                                 </Menu>

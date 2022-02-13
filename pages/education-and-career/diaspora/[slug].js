@@ -27,11 +27,6 @@ export default function BlogPost({data}) {
 
                     <Article data={data} />
                 </Flex>
-                {/*<Flex >*/}
-
-                {/*    <Column />*/}
-
-                {/*</Flex>*/}
 
             </Flex>
 </NestedLayout>
