@@ -27,7 +27,11 @@ function Layout({children}) {
         NProgress.done();
     });
     const headerQuery = `*[_type == "navigationMenu" ][0]{
-  menuItems[]->
+  menuItems[]->{title,slug,category,dropdown,
+     menu_submenu[]->,
+  },
+
+ 
 }`
     const footerQuery = `*[_type == "footer" ] {title,_id,slug }`
     useEffect(() => {
@@ -37,6 +41,7 @@ function Layout({children}) {
 
 
                 setLinks(res.menuItems)
+                console.log(links)
                 client.fetch(footerQuery)
                     .then((res) => {
 

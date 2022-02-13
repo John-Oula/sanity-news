@@ -5,7 +5,7 @@ import {
     Container,
     Flex,
     Heading,
-    HStack,
+    SimpleGrid,
     Menu,
     MenuButton, MenuItem,
     MenuList,
@@ -77,7 +77,7 @@ export default function BusinessDirectory({posts}) {
 
                                     </MenuList>
                                 </Menu>
-                                <HStack mt={10}  spacing={4}>
+                                <SimpleGrid minChildWidth={['auto','250px','250px','250px','250px']} spacing='40px'>
                                     {
                                        !searching && searchResults.length  === 0 && !message && posts?.directory?.map(each =>{
                                            return(
@@ -99,7 +99,7 @@ export default function BusinessDirectory({posts}) {
                                         })
                                     }
 
-                                </HStack>
+                                </SimpleGrid>
                             </Box>
                         </Flex>
                     </Box>

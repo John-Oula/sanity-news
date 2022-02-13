@@ -4,7 +4,7 @@ import {urlFor} from "../sanity";
 
 function Card({post}) {
     return (
-        <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+        <Box boxShadow={`lg`} maxW='sm' h={`fit-content`}  borderWidth='1px' borderRadius='lg' overflow='hidden'>
             {post?.cover_image?.asset &&
             <Image fallbackSrc={`https://via.placeholder.com/200`} src={urlFor(post?.cover_image)?.url()}
                    w={`100%`} h={`100%`}/>}
@@ -20,7 +20,7 @@ function Card({post}) {
                     fontWeight='semibold'
                     as='h4'
                     lineHeight='tight'
-                    isTruncated
+
                 >
                     {post?.company}
                 </Box>
@@ -29,9 +29,9 @@ function Card({post}) {
                     fontWeight='light'
                     as='h6'
                     lineHeight='tight'
-                    isTruncated
+
                 >
-                    {post?.summary}
+                    {post?.summary.substring(0,100)}
                 </Box>
 
 

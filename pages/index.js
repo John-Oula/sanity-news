@@ -26,7 +26,7 @@ export default function Home({navigation, posts, carousel, partners}) {
 
                     <Flex w={`100%`} flexDirection={[`column`,`column`,`row`,`row`,`row`,]}>
                         <Flex flexDirection={`column`} w={[`100%`,`100%`,`100%`,`100%`,`100%`]}  h={`100%`}>
-                            <Flex flexDirection={[`column`,`column`,`row`,`row`,`row`,]} h={`29%`}>
+                            <Flex flexDirection={[`column`,`column`,`row`,`row`,`row`,]} h={`55%`}>
                                 <PostCard post={posts} position={1}/>
                                 <Column post={posts}  position={2}/>
                             </Flex>

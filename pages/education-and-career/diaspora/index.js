@@ -9,7 +9,6 @@ function Posts({posts}) {
 
     return (
         <Container maxW='container.xl' centerContent>
-
             <NestedLayout>
                 {
                     posts?.map(each =>  {  return (<HorizontalPostBlock post={each?.posts} title={each?.title}/>)})

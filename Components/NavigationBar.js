@@ -24,7 +24,7 @@ import {AiFillHome} from "react-icons/ai";
 const NavigationBar = ({nav}) => {
     const [text, setText] = useState('');
     const history = useRouter()
-    console.log(nav)
+
 
 
     return (
@@ -81,7 +81,7 @@ const NavigationBar = ({nav}) => {
                                                     <MenuList>
 
                                                         {
-                                                            each?.submenu && each?.submenu.map(link => (
+                                                            each?.menu_submenu && each?.menu_submenu.map(link => (
                                                                 <MenuItem w={[`100%`, `100%`, `100%`, `fit-content`]}
                                                                           key={link?._id}><Link
                                                                     href={`/${each?.slug?.current}/${link?.slug?.current}`}>{link?.title}</Link></MenuItem>))
