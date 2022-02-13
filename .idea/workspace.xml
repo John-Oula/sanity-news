@@ -284,25 +284,6 @@
       <change afterPath="$PROJECT_DIR$/../webthree/webthree/public/hero_image.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/youtube-react-admin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/NavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/business/business-directory/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/business/business-directory/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/career/[slug].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/education-and-career/[slug].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/career/african-experts-in-netherlands/[slug].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/education-and-career/african-experts-in-netherlands/[slug].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/career/african-experts-in-netherlands/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/education-and-career/african-experts-in-netherlands/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/career/diaspora/[slug].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/education-and-career/diaspora/[slug].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/career/diaspora/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/education-and-career/diaspora/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/career/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/education-and-career/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/career/research-university-partnerships/[slug].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/education-and-career/research-university-partnerships/[slug].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/career/studying-in-netherlands/[slug].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/education-and-career/working-in-netherlands/[slug].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/career/working-in-netherlands/[slug].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/scholarships/studying-in-netherlands/[slug].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/scholarshpis/[slug].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/scholarships/[slug].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/scholarshpis/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/scholarships/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/scholarshpis/studying-in-netherlands/[slug].js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/scholarshpis/studying-in-netherlands/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/scholarships/studying-in-netherlands/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -404,7 +385,7 @@
       <workItem from="1644396217936" duration="55566000" />
       <workItem from="1644498995866" duration="53450000" />
       <workItem from="1644645449649" duration="21399000" />
-      <workItem from="1644740824954" duration="6009000" />
+      <workItem from="1644740824954" duration="6606000" />
     </task>
     <servers />
   </component>
