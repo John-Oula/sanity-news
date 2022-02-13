@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Image, Flex} from "@chakra-ui/react";
-import {urlFor} from "../sanity";
+import {PortableText, urlFor} from "../sanity";
 
 function Card({post}) {
     return (
@@ -31,7 +31,8 @@ function Card({post}) {
                     lineHeight='tight'
 
                 >
-                    {post?.summary.substring(0,100)}
+
+                    <PortableText data={post?.body} />
                 </Box>
 
 
