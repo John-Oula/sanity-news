@@ -9,7 +9,7 @@ function CircleFilter({state,data}) {
             {
                 letters.map((each,index) =>{
                     return(
-                        <Circle m={1} p={2} key={index} color={`black`} size={`30px`}  bg={ state ? 'green' : 'gray.200'}>
+                        <Circle m={1} p={2} key={index} color={`black`} size={`30px`}  bg={ state ? 'gray.200' : 'gray.200'}>
                         <Text>{each}</Text>
 
                     </Circle>)
