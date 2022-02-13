@@ -284,8 +284,7 @@
       <change afterPath="$PROJECT_DIR$/../webthree/webthree/public/hero_image.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/youtube-react-admin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/CircleFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/CircleFilter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/DirectoryNavbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/DirectoryNavbar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -387,7 +386,7 @@
       <workItem from="1644396217936" duration="55566000" />
       <workItem from="1644498995866" duration="53450000" />
       <workItem from="1644645449649" duration="21399000" />
-      <workItem from="1644740824954" duration="11497000" />
+      <workItem from="1644740824954" duration="11958000" />
     </task>
     <servers />
   </component>

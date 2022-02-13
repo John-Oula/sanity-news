@@ -62,7 +62,7 @@ const DirectoryNavbar = () => {
                                         <Text><Link href={`/`}>Companies & Organisations</Link></Text>
                                     </Flex>
                                     <Flex p={2} flexGrow={1} cursor={`pointer`} fontSize={`sm`} borderRadius={`0px`}>
-                                        <Text><Link href={`/post/companies-form`}>Add entry</Link></Text>
+                                        <Text><Link href={`/registration/companies-form`}>Add entry</Link></Text>
                                     </Flex>
                                     <Spacer/>
                                     <Flex textAlign={`flex-end`} p={2} flexGrow={1}>
