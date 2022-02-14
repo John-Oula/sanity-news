@@ -1,47 +1,36 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import {Box, Container, Flex, Heading, Text,} from '@chakra-ui/react'
-import Footer from "./Footer";
-import {client, toPlainText} from "../sanity";
-import NavigationBar from "./NavigationBar";
-import React, {useContext, useEffect, useState} from "react";
-import NProgress from 'nprogress';
-import Router from 'next/router';
-import SearchContext from "../contexts/SearchContext";
-import Breadcrumbs from 'nextjs-breadcrumbs';
-import logo from '../assets/images/logo.jpg'
-import {FacebookIcon, FacebookMessengerIcon, InstapaperIcon, LinkedinIcon, TwitterIcon} from "react-share";
-import PostCard from "./PostCard";
+import {Flex,} from '@chakra-ui/react'
+import {client} from "../sanity";
+import React, {useEffect, useState} from "react";
 import Column from "./Column";
-import HorizontalCard from "./HorizontalCard";
 import TabColumn from "./TabColumn";
-import Link from "next/link";
+import SidebarCard from "./SidebarCard";
 
 function NestedLayout({children , data}) {
+    const [post,setPost] = useState([]);
 
+    const sidebar =`
+*[_type == "heading" && sidebar == true] {title,position,_id,
+"posts": *[_type == "post" && references(^._id)]{
+              title,slug,body,_id,
+                  "category":category->title,
+                  "image":mainImage,
+                        "category_slug":category->slug
+                       }}`
 
-
-    const headerQuery = `*[_type == "menu" ] {title,_id,slug,submenu,dropdown,list,single,
-"category": category->title }`
-    const footerQuery = `*[_type == "footer" ] {title,_id,slug }`
     useEffect(() => {
 
-        client.fetch(headerQuery)
-            .then((res) => {
+                        client.fetch(sidebar)
+                            .then(res=>{
+                                setPost(res)
+                                console.log(res)
+                                console.log(post)
+                            })
 
-                setLinks(res)
-                client.fetch(footerQuery)
-                    .then((res) => {
-
-                        setFooter(res)
-                    })
                     .catch(error => {
                         console.log(error)
                     })
-            })
-            .catch(error => {
-                console.log(error)
-            })
+
+
 
 
 
@@ -58,10 +47,17 @@ function NestedLayout({children , data}) {
                 </Flex>
                 <Flex flexDirection={`column`}  w={[`100%`,`100%`,`20%`,`20%`,`20%`,]} >
 
-                    <Column post={data} key={1} position={10} />
+                    {/*<Column post={data} key={1} position={10} />*/}
                     <TabColumn post={data} key={2} firstPosition={11} secondPosition={12} />
-                    <Column post={data} key={5} position={13} />
-                    <Column post={data} key={5} position={14} />
+                    {/*<Column post={data} key={5} position={13} />*/}
+                    {/*<Column post={data} key={5} position={14} />*/}
+                    { post &&
+                        post.map(each =>{
+                           return( <>
+                               <SidebarCard key={each._id} post={each} />
+                           </>)
+                        })
+                    }
 
                 </Flex>
 

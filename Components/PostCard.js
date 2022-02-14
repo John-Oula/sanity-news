@@ -29,7 +29,7 @@ function PostCard({post,position}) {
 
                                     <Box p={3} >
 
-                                       <Text>{toPlainText(each?.posts[0]?.body)?.substring(0,50)}</Text>
+                                       <Text>{toPlainText(each?.posts[0]?.body)?.substring(0,100)}</Text>
 
                                     </Box>
                                     <Button m={`10pt`} onClick={() => router.push(`/events/${each?.posts[0]?.slug?.current}`)} borderColor={` #d6d9dc`} variant='outline' borderRadius={`0px`} bgColor={`white`}>Read

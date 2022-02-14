@@ -17,7 +17,7 @@ function Partners({data}) {
             </Box>
             <SimpleGrid p={4}  minChildWidth='120px' spacing='10px'>
                 {
-                    data != undefined && data[0].partner.slice(0,10).map((each,index) =>{
+                    data != undefined && data.partner.slice(0,10).map((each,index) =>{
                         return(
 
                                 <Flex key={each._id+ index.toString()} flexGrow={1} >

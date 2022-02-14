@@ -30,7 +30,7 @@ function Column({position,post}) {
                 <Flex ml={[0,0,4,4,4]} mt={[4,4,0,0,0]} mb={`5%`} height={`fit-content`}  w={`100%`}
                    border={`solid`} borderWidth={[`0px`,0,`1px`,`1px`,`1px`]}
                    borderColor={` #d6d9dc`} flexDirection={`column`}>
-                <Box color={`white`}
+                <Box color={ position === 2 ? `grey.500` :`white`}
                      bgColor={ "#1e9339"}>
                     <Heading as='h4' size='md' p={5}
                              color={ `white`}>

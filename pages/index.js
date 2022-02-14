@@ -11,7 +11,7 @@ import PostCard from "../Components/PostCard";
 import HorizontalCard from "../Components/HorizontalCard";
 import {ArrowForwardIcon} from "@chakra-ui/icons";
 
-export default function Home({navigation, posts, carousel, partners}) {
+export default function Home({ posts, carousel}) {
 
 
 
@@ -48,7 +48,7 @@ export default function Home({navigation, posts, carousel, partners}) {
                     <Column post={posts}  position={9} />
 
                 </Stack>
-                <Partners data={partners}/>
+
 
             </Flex>
         </Container>
@@ -60,7 +60,7 @@ export default function Home({navigation, posts, carousel, partners}) {
 export async function getServerSideProps() {
 
 
-    const partners = await client.fetch(`*[_type == "partners"]`)
+
 
     const posts = await client.fetch(`
 *[_type == "heading" && featured != false] {title,position,
@@ -83,7 +83,7 @@ export async function getServerSideProps() {
 
                 posts: posts,
                 carousel: carousel,
-                partners: partners,
+
             }
         }
     }

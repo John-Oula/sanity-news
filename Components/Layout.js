@@ -11,21 +11,23 @@ import SearchContext from "../contexts/SearchContext";
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import logo from '../assets/images/logo_white.jpg'
 import {FacebookIcon, FacebookMessengerIcon, InstapaperIcon, LinkedinIcon, TwitterIcon} from "react-share";
+import Partners from "./Partners";
 
 function Layout({children}) {
 
     const [links, setLinks] = useState([]);
     const [footer, setFooter] = useState([]);
+    const [partners, setPartners] = useState([]);
     const {searching,searchResults,message} = useContext(SearchContext)
-    NProgress.configure({showSpinner: false});
-
-    Router.events.on('routeChangeStart', () => {
-        NProgress.start();
-    });
-
-    Router.events.on('routeChangeComplete', () => {
-        NProgress.done();
-    });
+    // NProgress.configure({showSpinner: false});
+    //
+    // Router.events.on('routeChangeStart', () => {
+    //     NProgress.start();
+    // });
+    //
+    // Router.events.on('routeChangeComplete', () => {
+    //     NProgress.done();
+    // });
     const headerQuery = `*[_type == "navigationMenu" ][0]{
   menuItems[]->{title,slug,category,dropdown,
      menu_submenu[]->,
@@ -34,6 +36,7 @@ function Layout({children}) {
  
 }`
     const footerQuery = `*[_type == "footer" ] {title,_id,slug }`
+
     useEffect(() => {
 
         client.fetch(headerQuery)
@@ -41,11 +44,16 @@ function Layout({children}) {
 
 
                 setLinks(res.menuItems)
+
                 console.log(links)
                 client.fetch(footerQuery)
                     .then((res) => {
 
                         setFooter(res)
+                       client.fetch(`*[_type == "partners"]`)
+                           .then((res)=>{
+                               setPartners(res)
+                           })
                     })
                     .catch(error => {
                         console.log(error)
@@ -121,6 +129,9 @@ function Layout({children}) {
 
 
               </main>
+                <Container  maxW='container.xl' >
+                <Partners data={partners[0]}/>
+                </Container>
                 <footer>
                     <Footer data={footer} />
                 </footer>

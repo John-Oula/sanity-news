@@ -32,7 +32,8 @@ function Card({post}) {
 
                 >
 
-                    <PortableText data={post?.body} />
+                    {post?.body && <PortableText data={post?.body}/>}
+
                 </Box>
 
 
