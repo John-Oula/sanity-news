@@ -67,8 +67,11 @@
       <change afterPath="$PROJECT_DIR$/../Thesis_Final.pdf" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../agency-alpha/agency-alpha-next/.idea/agency-alpha-next.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../agency-alpha/agency-alpha-next/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/about-us/testimonials/[slug].js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/about-us/testimonials/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/android-chrome-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/android-chrome-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon-16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon-32x32.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../blogApp/.editorconfig" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../blogApp/.env.example" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../blogApp/.eslintignore" afterDir="false" />
@@ -289,18 +292,7 @@
       <change afterPath="$PROJECT_DIR$/../webthree/webthree/public/hero_image.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/youtube-react-admin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/HorizontalPostBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/HorizontalPostBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/List.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/NavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Partners.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Partners.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/business/business-directory/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/business/business-directory/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/scholarships/[slug].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/scholarships/[slug].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +322,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/about-us/testimonials" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -340,11 +332,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\blog\public" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages\about-us\testimonials" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages\scholarshpis\scholarships-opportunities-in-netherlands" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages\business" />
-      <recent name="C:\Users\ASUS\Desktop\blog\Components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ASUS\Desktop\blog\pages\business\business-directory" />
@@ -408,7 +400,7 @@
       <workItem from="1644740824954" duration="12678000" />
       <workItem from="1644823080141" duration="1360000" />
       <workItem from="1644858069364" duration="5010000" />
-      <workItem from="1644906208939" duration="11119000" />
+      <workItem from="1644906208939" duration="11543000" />
     </task>
     <servers />
   </component>
