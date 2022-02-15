@@ -288,7 +288,7 @@
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/youtube-react-admin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/HorizontalPostBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/HorizontalPostBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Layout.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -396,7 +396,7 @@
       <workItem from="1644740824954" duration="12678000" />
       <workItem from="1644823080141" duration="1360000" />
       <workItem from="1644858069364" duration="5010000" />
-      <workItem from="1644906208939" duration="12269000" />
+      <workItem from="1644906208939" duration="12863000" />
     </task>
     <servers />
   </component>
