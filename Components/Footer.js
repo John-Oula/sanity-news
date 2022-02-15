@@ -11,7 +11,7 @@ function Footer({data}) {
                         {data?.map(each => {
                             return (
                                 <>
-                                   <Text fontSize={`sm`}   p={1}> <Link href={`/${each?.slug.current}`} passHref>{each?.title}</Link></Text>
+                                   <Text fontSize={`sm`} key={each._id}   p={1}> <Link href={`/${each?.slug.current}`} passHref>{each?.title}</Link></Text>
                                     <Divider orientation='vertical'/>
                                 </>
                             )

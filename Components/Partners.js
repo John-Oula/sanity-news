@@ -20,7 +20,7 @@ function Partners({data}) {
                     data != undefined && data.partner.slice(0,10).map((each,index) =>{
                         return(
 
-                                <Flex key={each._id+ index.toString()} flexGrow={1} >
+                                <Flex key={each._id} flexGrow={1} >
                                     <Box  mr={4}  width={200} height={200}>
                                         <Image fallbackSrc={`https://via.placeholder.com/200`} src={urlFor(each.image).url()} width={`auto`} h={`auto`} />
                                     </Box>

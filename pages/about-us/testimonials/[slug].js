@@ -1,9 +1,9 @@
-import {client} from "../../sanity";
+import {client} from "../../../sanity";
 import {Container, Flex} from "@chakra-ui/react";
-import Article from "../../Components/Article";
+import Article from "../../../Components/Article";
 import React from "react";
-import Column from "../../Components/Column";
-import NestedLayout from "../../Components/NestedLayout";
+import Column from "../../../Components/Column";
+import NestedLayout from "../../../Components/NestedLayout";
 
 const postQuery = `*[_type == "post" && slug.current == $slug][0]{
   ...,

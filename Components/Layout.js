@@ -18,18 +18,18 @@ function Layout({children}) {
     const [links, setLinks] = useState([]);
     const [footer, setFooter] = useState([]);
     const [partners, setPartners] = useState([]);
-    const {searching,searchResults,message} = useContext(SearchContext)
-    // NProgress.configure({showSpinner: false});
-    //
-    // Router.events.on('routeChangeStart', () => {
-    //     NProgress.start();
-    // });
-    //
-    // Router.events.on('routeChangeComplete', () => {
-    //     NProgress.done();
-    // });
+
+    NProgress.configure({showSpinner: false});
+
+    Router.events.on('routeChangeStart', () => {
+        NProgress.start();
+    });
+
+    Router.events.on('routeChangeComplete', () => {
+        NProgress.done();
+    });
     const headerQuery = `*[_type == "navigationMenu" ][0]{
-  menuItems[]->{title,slug,category,dropdown,
+  menuItems[]->{title,slug,category,dropdown,icon,
      menu_submenu[]->,
   },
 

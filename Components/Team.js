@@ -9,7 +9,7 @@ function Team({data}) {
             {
                 data?.members?.map(each =>{
                     return(
-                        <Flex flexDirection={`column`} textAlign={`center`} justifyContent={`center`} p={5}>
+                        <Flex key={each._id} flexDirection={`column`} textAlign={`center`} justifyContent={`center`} p={5}>
                             <Circle overflow={`hidden`} size={`150pt`}>
                                 <Image src={urlFor(each?.image).url()} width={`auto`} h={`auto`} fallbackSrc={`https://via.placeholder.com/200`} />
                             </Circle>

@@ -6,9 +6,9 @@ function List({posts}) {
     return (
         <>
             {
-                posts?.map((each, index) => {
+                posts?.map((each) => {
                     return (
-                        <Post   key={each._id + index.toString()} data={each} />
+                        <Post   key={each._id} data={each} />
                     )
                 })
             }

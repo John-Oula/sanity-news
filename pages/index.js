@@ -27,8 +27,8 @@ export default function Home({ posts, carousel}) {
                     <Flex w={`100%`} flexDirection={[`column`,`column`,`row`,`row`,`row`,]}>
                         <Flex flexDirection={`column`} w={[`100%`,`100%`,`100%`,`100%`,`100%`]}  h={`100%`}>
                             <Flex flexDirection={[`column`,`column`,`row`,`row`,`row`,]} h={`55%`}>
-                                <PostCard post={posts} position={1}/>
-                                <Column post={posts}  position={2}/>
+                                <PostCard post={posts} position={1} key={1}/>
+                                <Column post={posts}  position={2} key={2}/>
                             </Flex>
 
                             <HorizontalCard  key={3} position={3} post={posts}/>
@@ -42,10 +42,10 @@ export default function Home({ posts, carousel}) {
 
                 <Stack direction={['column', 'row']} spacing='24px'>
 
-                    <Column post={posts} position={6}  />
-                    <Column post={posts}  position={7} />
-                    <Column post={posts}  position={8} />
-                    <Column post={posts}  position={9} />
+                    <Column post={posts} position={6} key={6}  />
+                    <Column post={posts}  position={7} key={7} />
+                    <Column post={posts}  position={8} key={8} />
+                    <Column post={posts}  position={9} key={9} />
 
                 </Stack>
 

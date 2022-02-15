@@ -82,7 +82,7 @@ export default function BusinessDirectory({posts}) {
                                        !searching && searchResults.length  === 0 && !message && posts?.directory?.map(each =>{
                                            return(
                                                <>
-                                               <Card post={each} />
+                                               <Card key={each._id} post={each} />
                                                </>
 
                                            )
@@ -92,7 +92,7 @@ export default function BusinessDirectory({posts}) {
                                         !searching  && searchResults.length > 0 && !message && searchResults?.map(each =>{
                                             return(
                                                 <>
-                                                    <Card post={each} />
+                                                    <Card key={each._id} post={each} />
                                                 </>
 
                                             )

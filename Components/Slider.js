@@ -15,7 +15,7 @@ function Slider({images}) {
                 {
                     images[0].carousel.map((each,index) =>{
                         return(
-                            <Carousel.Item key={index}>
+                            <Carousel.Item key={each._id}>
                                 <Box w={`100%`} h={`400px`} overflow={`hidden`} >
                                     <Image fallbackSrc={`https://via.placeholder.com/200`} src={urlFor(each.image).url()} w={`auto`} h={`auto`} />
                                 </Box>
