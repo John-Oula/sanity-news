@@ -1,27 +1,153 @@
+
 import React, {useState} from 'react';
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import dynamic from 'next/dynamic';
+import { EditorState, convertToRaw } from 'draft-js';
+import draftToHtml from 'draftjs-to-html';
+
 import {Box, Button, Flex, FormControl, FormLabel, Input, InputGroup, Select} from "@chakra-ui/react";
 import {client} from "../sanity";
 import {useForm} from "react-hook-form";
 import {useRouter} from "next/router";
+import blockTools from '@sanity/block-tools'
+import Schema from '@sanity/schema'
+import blockContent from '../sanity/schema/block'
+const Editor = dynamic(
+    () => import('react-draft-wysiwyg').then(mod => mod.Editor),
+    { ssr: false })
 
 function Forms({data}) {
     const router = useRouter()
-
     const {handleSubmit, register} = useForm();
     const [loading, setLoading] = useState();
+    const [editor, setEditor] = useState(EditorState.createEmpty());
 
+    const schema = Schema.compile({
+        name: "schema",
+        types:
+            [{
+            name: 'company',
+            title: 'Companies & Organizations',
+            type: 'object',
+            fields: [
+                {
+                    name: 'company',
+                    type: 'string',
+                },
+                {
+                    name: 'category',
+
+                    type: 'string',
+                },
+                {
+                    name: 'website',
+
+                    type: 'string',
+                },
+
+                {
+                    name: 'logo',
+
+                    type: 'image',
+                },
+
+                {
+                    name: 'cover_image',
+
+                    type: 'image',
+                },
+                {
+                    name: 'intro_image',
+
+                    type: 'image',
+                },
+                {
+                    name: 'body',
+                    title: 'Body',
+                    type: 'array',
+                    of: [{type: 'block'}]
+                },
+                {
+                    name: 'summary',
+
+                    type: 'string',
+                },
+
+                {
+                    name: 'description',
+
+                    type: 'string',
+                },
+                {
+                    name: 'contact',
+
+                    type: 'string',
+                },
+                {
+                    name: 'phone',
+
+                    type: 'string',
+                },
+
+                {
+                    name: 'email',
+
+                    type: 'string',
+                },
+                {
+                    name: 'street',
+
+                    type: 'string',
+                },
+                {
+                    name: 'postcode',
+
+                    type: 'string',
+                },
+                {
+                    name: 'city',
+
+                    type: 'string',
+                },
+                {
+                    name: 'country',
+
+                    type: 'string',
+                },
+
+
+            ],
+        }]
+    })
+
+    const editorText = (editorState) =>{
+        setEditor(editorState)
+
+    }
 
     const onSubmit = async (values) => {
+        console.log(data)
+        // The compiled schema type for the content type that holds the block array
+        const blockContentType = schema.get('company')
+            .fields.find(field => field.name === 'body').type
 
-        console.log(values)
+        // convert to html
+        const html =  draftToHtml(convertToRaw(editor.getCurrentContent()))
+
+        const blocks = blockTools.htmlToBlocks(html, blockContentType)
+
+
+        const formData = Object.assign(values,{"body":blocks})
+        console.log(formData)
 
 
         setLoading(true)
 
+
         if (data?.formType === 'cv-form' || data?.formType === 'users') {
-            const cv = values.cv[0]
+            const cv = formData.cv[0]
             await client.create({
-                ...values,
+                ...formData,
                 _type: data?.formType === 'cv-form' ? 'cv_upload' : data?.formType === 'companies-form' ? 'company' : 'users'
             })
                 .then(response => {
@@ -35,7 +161,7 @@ function Forms({data}) {
                             // If you want to set a specific asset field you can to the following:
                             console.log(asset)
                             if (data?.formType === 'cv-form') {
-                                const motivationLetter = values.motivation_letter[0]
+                                const motivationLetter = formData.motivation_letter[0]
                                 return client.assets
                                     .upload('file', motivationLetter, {
                                         filename: motivationLetter.name
@@ -98,12 +224,13 @@ function Forms({data}) {
 
         }
         else if (data?.formType === 'companies-form' ){
+            console.log('company')
 
-            const logo = values.logo[0]
-            const intro_image = values.intro_image[0]
-            const cover_image = values.cover_image[0]
+            const logo = formData.logo[0]
+            const intro_image = formData.intro_image[0]
+            const cover_image = formData.cover_image[0]
 
-            const company =  await client.create({...values, _type: 'company'})
+            const company =  await client.create({...formData, _type: 'company'})
             const intro_image_upload = await client.assets.upload('image', intro_image, {filename: intro_image.name})
             const logo_upload = await client.assets.upload('image', logo, {filename: logo.name})
             const cover_image_upload = await client.assets.upload('image', cover_image, {filename: cover_image.name})
@@ -200,26 +327,21 @@ function Forms({data}) {
                                                 each?.fieldType === 'checkbox' ?
                                                     <>
 
-                                                        {/*{each.checkboxOptions.map((option) => (*/}
-                                                        {/*    <InputGroup key={option._key} {...register(option?.title)}>*/}
-                                                        {/*        <Checkbox>{option?.title}</Checkbox>*/}
-                                                        {/*    </InputGroup>*/}
+                                                        {each.checkboxOptions.map((option) => (
+                                                            <InputGroup key={option._key} {...register(option?.title)}>
+                                                                <Checkbox>{option?.title}</Checkbox>
+                                                            </InputGroup>
 
 
-                                                        {/*))}*/}
+                                                        ))}
 
                                                     </>
                                                     :
-                                                    each?.fieldType === 'text editor' ?
+                                                    each?.fieldType === 'text-editor' ?
                                                     <>
 
-                                                        {/*{each.checkboxOptions.map((option) => (*/}
-                                                        {/*    <InputGroup key={option._key} {...register(option?.title)}>*/}
-                                                        {/*        <Checkbox>{option?.title}</Checkbox>*/}
-                                                        {/*    </InputGroup>*/}
+                                                        <Editor editorState={editor} onEditorStateChange={editorText} />
 
-
-                                                        {/*))}*/}
 
                                                     </>
                                                     :

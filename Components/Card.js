@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Image, Flex} from "@chakra-ui/react";
+import {Box, Image} from "@chakra-ui/react";
 import {PortableText, urlFor} from "../sanity";
 
 function Card({post}) {

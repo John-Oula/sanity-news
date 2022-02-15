@@ -1,7 +1,6 @@
 import {Flex,} from '@chakra-ui/react'
 import {client} from "../sanity";
 import React, {useEffect, useState} from "react";
-import Column from "./Column";
 import TabColumn from "./TabColumn";
 import SidebarCard from "./SidebarCard";
 
@@ -11,7 +10,7 @@ function NestedLayout({children , data}) {
     const sidebar =`
 *[_type == "heading" && sidebar == true] {title,position,_id,
 "posts": *[_type == "post" && references(^._id)]{
-              title,slug,body,_id,
+              title,slug,body,_id,externalLink,link,
                   "category":category->title,
                   "image":mainImage,
                         "category_slug":category->slug

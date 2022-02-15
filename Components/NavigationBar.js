@@ -1,7 +1,7 @@
 import {
-    Button,
     Container,
-    Flex, Image,
+    Flex,
+    Image,
     Input,
     InputGroup,
     InputLeftElement,
@@ -9,7 +9,6 @@ import {
     MenuButton,
     MenuItem,
     MenuList,
-    Spacer,
     Text
 } from '@chakra-ui/react'
 

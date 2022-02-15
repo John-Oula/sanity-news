@@ -1,15 +1,12 @@
-import {Box, Container, Flex, Heading, Stack} from "@chakra-ui/react";
+import {Box, Container, Flex, Stack} from "@chakra-ui/react";
 import Slider from "../Components/Slider";
 import Column from "../Components/Column";
-import GridLayout from "../Components/GridLayout";
-import Partners from "../Components/Partners";
 import React from "react";
 
 import {client} from "../sanity";
 import NestedLayout from "../Components/NestedLayout";
 import PostCard from "../Components/PostCard";
 import HorizontalCard from "../Components/HorizontalCard";
-import {ArrowForwardIcon} from "@chakra-ui/icons";
 
 export default function Home({ posts, carousel}) {
 
@@ -65,7 +62,7 @@ export async function getServerSideProps() {
     const posts = await client.fetch(`
 *[_type == "heading" && featured != false] {title,position,
 "posts": *[_type == "post" && references(^._id)]{
-              title,slug,body,_id,
+              title,slug,body,_id,externalLink,link,
                   "category":category->title,
                   "image":mainImage,
                         "category_slug":category->slug

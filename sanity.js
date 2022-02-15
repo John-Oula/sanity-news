@@ -1,11 +1,13 @@
 import Forms from "./Components/Forms";
-
-const BlockContent = require('@sanity/block-content-to-react')
-const sanityClient = require('@sanity/client')
 import getYouTubeId from 'get-youtube-id'
 import YouTube from 'react-youtube'
 import React from 'react'
 import InlineVideo from "./Components/InlineVideo";
+import imageUrlBuilder from '@sanity/image-url'
+import Team from "./Components/Team";
+
+const BlockContent = require('@sanity/block-content-to-react')
+const sanityClient = require('@sanity/client')
 
 const config = {
     projectId: 'y90icmhk',
@@ -15,9 +17,6 @@ const config = {
     useCdn: false, // `false` if you want to ensure fresh data
 }
 export const client = sanityClient(config)
-
-import imageUrlBuilder from '@sanity/image-url'
-import Team from "./Components/Team";
 
 export function toPlainText(blocks = []) {
     return blocks

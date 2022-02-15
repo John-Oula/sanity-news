@@ -1,21 +1,21 @@
 import {client, PortableText} from "../../../sanity";
 import {
     Box,
+    Button,
     Center,
     Container,
     Flex,
     Heading,
-    SimpleGrid,
     Menu,
-    MenuButton, MenuItem,
+    MenuButton,
+    MenuItem,
     MenuList,
+    SimpleGrid,
     Spinner,
-    Button,
     Text
 } from "@chakra-ui/react";
 
 import React, {useContext, useEffect} from "react";
-import Column from "../../../Components/Column";
 import NestedLayout from "../../../Components/NestedLayout";
 import DirectoryNavbar from "../../../Components/DirectoryNavbar";
 import {ChevronDownIcon, TimeIcon} from "@chakra-ui/icons";
@@ -23,8 +23,6 @@ import Moment from "react-moment";
 import Card from "../../../Components/Card";
 import SearchContext from "../../../contexts/SearchContext";
 import CircleFilter from "../../../Components/CircleFilter";
-
-
 
 
 export default function BusinessDirectory({posts}) {

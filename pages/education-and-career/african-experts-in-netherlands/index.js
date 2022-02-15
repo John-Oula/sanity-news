@@ -6,9 +6,6 @@ import List from "../../../Components/List";
 import {useRouter} from 'next/router'
 
 
-
-
-
 function Posts({posts}) {
     const router = useRouter();
     console.log()

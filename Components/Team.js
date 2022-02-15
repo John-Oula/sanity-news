@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box,Text, Circle, Flex, Heading, Image} from "@chakra-ui/react";
+import {Circle, Flex, Heading, Image, Text} from "@chakra-ui/react";
 import {urlFor} from "../sanity";
 
 function Team({data}) {

@@ -4,14 +4,13 @@ import {Box, Container, Flex,} from '@chakra-ui/react'
 import Footer from "./Footer";
 import {client} from "../sanity";
 import NavigationBar from "./NavigationBar";
-import React, {useContext, useEffect, useState} from "react";
-import NProgress from 'nprogress';
-import Router from 'next/router';
-import SearchContext from "../contexts/SearchContext";
+import React, {useEffect, useState} from "react";
 import Breadcrumbs from 'nextjs-breadcrumbs';
 import logo from '../assets/images/logo_white.jpg'
 import {FacebookIcon, FacebookMessengerIcon, InstapaperIcon, LinkedinIcon, TwitterIcon} from "react-share";
 import Partners from "./Partners";
+import NProgress from 'nprogress';
+import Router from 'next/router';
 
 function Layout({children}) {
 
@@ -19,15 +18,15 @@ function Layout({children}) {
     const [footer, setFooter] = useState([]);
     const [partners, setPartners] = useState([]);
 
-    // NProgress.configure({showSpinner: false});
-    //
-    // Router.events.on('routeChangeStart', () => {
-    //     NProgress.start();
-    // });
-    //
-    // Router.events.on('routeChangeComplete', () => {
-    //     NProgress.done();
-    // });
+    NProgress.configure({showSpinner: false});
+
+    Router.events.on('routeChangeStart', () => {
+        NProgress.start();
+    });
+
+    Router.events.on('routeChangeComplete', () => {
+        NProgress.done();
+    });
     const headerQuery = `*[_type == "navigationMenu" ][0]{
   menuItems[]->{title,slug,category,dropdown,icon,
      menu_submenu[]->,

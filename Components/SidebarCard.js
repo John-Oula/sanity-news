@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Box, Flex, Heading, Text} from "@chakra-ui/react";
 import Link from "next/link";
-import {client, toPlainText} from "../sanity";
 
 function SidebarCard({post}) {
 

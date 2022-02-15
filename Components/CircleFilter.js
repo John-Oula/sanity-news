@@ -1,5 +1,5 @@
 import React from 'react';
-import {Circle, Text, Flex, Stack} from "@chakra-ui/react";
+import {Circle, Flex, Text} from "@chakra-ui/react";
 
 function CircleFilter({state,data}) {
 
