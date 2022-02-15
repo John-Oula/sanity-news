@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Box, Flex, Heading, Image, LinkBox, LinkOverlay, SimpleGrid, Wrap, WrapItem} from "@chakra-ui/react";
 import {ArrowForwardIcon} from "@chakra-ui/icons";
 import {toPlainText, urlFor} from "../sanity";
 import NextLink from 'next/link'
-import heading from "../../sanityblog/objects/heading";
 import {useRouter} from "next/router";
 
 function HorizontalPostBlock({post,title , heading_slug}) {
