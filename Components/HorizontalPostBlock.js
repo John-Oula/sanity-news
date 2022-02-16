@@ -40,13 +40,22 @@ function HorizontalPostBlock({post,title , heading_slug}) {
                                                                         <Heading as={`h5`} size={`sm`}>{one.title}</Heading>
                                                                         <br/>
                                                                         <WrapItem color={`#696969`}>
-                                                                            {/*{toPlainText(one?.body)}*/}
-                                                                            <PortableText data={one?.body} />
+                                                                            {
+                                                                                one?.previewFull ?
+                                                                                    <PortableText data={one?.body} />
+                                                                                    :
+                                                                                    <>
+                                                                                        {toPlainText(one?.body).split(0,100)}
+                                                                                        <Text color={'#287b4f'}>Read More . . .</Text>
+                                                                                    </>
+                                                                            }
+
+
                                                                         </WrapItem>
                                                                     </Wrap>
 
                                                                 </Flex>
-                                                                {/*<Text color={'#287b4f'}>Read More . . .</Text>*/}
+
                                                             </LinkOverlay>
                                                         </NextLink>
                                                     </LinkBox>
