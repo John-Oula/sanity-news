@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import { EditorState, convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 
-import {Box, Button, Flex, FormControl, FormLabel, Input, InputGroup, Select} from "@chakra-ui/react";
+import {Box, Button, Flex, FormControl,CheckBox, FormLabel, Input, InputGroup, Select} from "@chakra-ui/react";
 import {client} from "../sanity";
 import {useForm} from "react-hook-form";
 import {useRouter} from "next/router";

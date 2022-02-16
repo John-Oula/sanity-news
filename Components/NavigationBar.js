@@ -1,7 +1,7 @@
 import {
+    Button,
     Container,
-    Flex,
-    Image,
+    Flex, Image,
     Input,
     InputGroup,
     InputLeftElement,
@@ -9,6 +9,7 @@ import {
     MenuButton,
     MenuItem,
     MenuList,
+    Spacer,
     Text
 } from '@chakra-ui/react'
 
@@ -35,29 +36,25 @@ const NavigationBar = ({nav}) => {
 
             <Container maxW={'container.xl'}>
 
-                <Flex display={"flex"}  flexDirection={`row`}>
-                    <Navbar collapseOnSelect expand="lg" bg="#1e9339" variant="light">
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+                <Flex  alignItems={[`center`]} display={"flex"}  flexDirection={`row`}>
 
-                        <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav>
-                                <Flex
-                                      flexDirection={[`column`, `column`, `row`, `row`, `row`,]}>
-                                    <Link href={`/`}>
-                                        <Flex
-                                            cursor={`pointer`}
-                                            fontSize={`sm`}
-                                            borderRadius={`0px`}
-                                            // borderColor={`#1e9339`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
-                                            pl={`3`}
-                                            pr={`3`} bgColor={`#1e9339`} alignItems={'center'} color={`#ffffff`}
-                                        ><AiFillHome/></Flex></Link>
-                                    {
-                                        nav?.map((each, index) => {
-                                            return (
-                                                <>
-                                                {
-                                                    each?.dropdown ?
+                    <Flex
+                        flexDirection={[`column`, `column`, `row`, `row`, `row`,]}>
+                        <Link href={`/`}>
+                            <Flex
+                                cursor={`pointer`}
+                                fontSize={`sm`}
+                                borderRadius={`0px`}
+                                // borderColor={`#1e9339`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
+                                pl={`3`}
+                                pr={`3`} bgColor={`#1e9339`} alignItems={'center'} color={`#ffffff`}
+                            ><AiFillHome/></Flex></Link>
+                        {
+                            nav?.map((each, index) => {
+                                return (
+                                    <>
+                                        {
+                                            each?.dropdown ?
 
                                                 <Menu>
 
@@ -88,7 +85,7 @@ const NavigationBar = ({nav}) => {
                                                         {
                                                             each?.menu_submenu && each?.menu_submenu.map(link => (
                                                                 <MenuItem
-                                                                          key={link?._id}><Link
+                                                                    key={link?._id}><Link
                                                                     href={`/${each?.slug?.current}/${link?.slug?.current}`}>{link?.title}</Link></MenuItem>))
                                                         }
 
@@ -96,28 +93,24 @@ const NavigationBar = ({nav}) => {
                                                     </MenuList>
                                                 </Menu>
                                                 :
-                                                                    <Flex cursor={`pointer`} key={each?._id + index.toString()} fontSize={`sm`}
-                                                                          borderRadius={`0px`}
-                                                                          // borderColor={`white`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
-                                                                          pl={`1`}
-                                                                          pr={`1`} color={`white`} alignItems={'center'} bgColor={`#1e9339`}>
-                                                                        <Image p={1} src={urlFor(each?.icon).url()} width={`24px`} height={`24px`} fallbackSrc={`https://via.placeholder.com/200`} />
+                                                <Flex cursor={`pointer`} key={each?._id + index.toString()} fontSize={`sm`}
+                                                      borderRadius={`0px`}
+                                                    // borderColor={`white`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
+                                                      pl={`1`}
+                                                      pr={`1`} color={`white`} alignItems={'center'} bgColor={`#1e9339`}>
+                                                    <Image p={1} src={urlFor(each?.icon).url()} width={`24px`} height={`24px`} fallbackSrc={`https://via.placeholder.com/200`} />
 
-                                                                        <Text><Link href={`/${each?.slug?.current}`}>{each?.title}</Link></Text>
-                                                                    </Flex>
+                                                    <Text><Link href={`/${each?.slug?.current}`}>{each?.title}</Link></Text>
+                                                </Flex>
 
                                         }
 
-                                                </>
-                                            )
-                                        })
-                                    }
+                                    </>
+                                )
+                            })
+                        }
 
-                                </Flex>
-
-                            </Nav>
-
-                        </Navbar.Collapse>
+                    </Flex>
                         <Flex  p={2}>
                             <form onSubmit={(e) => {
                                 e.preventDefault()
@@ -136,7 +129,7 @@ const NavigationBar = ({nav}) => {
 
                             </form>
                         </Flex>
-                    </Navbar>
+
 
                 </Flex>
             </Container>
