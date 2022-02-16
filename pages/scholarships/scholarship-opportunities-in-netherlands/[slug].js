@@ -1,8 +1,8 @@
-import {client} from "../../sanity";
+import {client} from "../../../sanity";
 import {Container, Flex} from "@chakra-ui/react";
-import Article from "../../Components/Article";
+import Article from "../../../Components/Article";
 import React from "react";
-import NestedLayout from "../../Components/NestedLayout";
+import NestedLayout from "../../../Components/NestedLayout";
 
 
 
