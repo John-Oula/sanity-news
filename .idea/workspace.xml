@@ -288,8 +288,6 @@
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/youtube-react-admin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Forms.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Forms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/NavigationBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,7 +339,7 @@
       <recent name="C:\Users\ASUS\Desktop\blog\pages\search" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.dev">
     <configuration default="true" type="ReactNative" factoryName="React Native">
       <node-interpreter value="node" />
       <react-native value="$USER_HOME$/AppData/Roaming/npm/node_modules/react-native-cli" />
@@ -375,8 +373,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -398,7 +396,8 @@
       <workItem from="1644823080141" duration="1360000" />
       <workItem from="1644858069364" duration="5010000" />
       <workItem from="1644906208939" duration="29284000" />
-      <workItem from="1645012933691" duration="529000" />
+      <workItem from="1645012933691" duration="1033000" />
+      <workItem from="1645021121201" duration="709000" />
     </task>
     <servers />
   </component>
