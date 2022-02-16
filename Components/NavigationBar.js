@@ -21,10 +21,9 @@ import {Nav, Navbar} from "react-bootstrap";
 import {AiFillHome} from "react-icons/ai";
 import {urlFor} from "../sanity";
 
-
 const NavigationBar = ({nav}) => {
     const [text, setText] = useState('');
-    const history = useRouter()
+    const router = useRouter()
 
 
 
@@ -84,9 +83,8 @@ const NavigationBar = ({nav}) => {
 
                                                         {
                                                             each?.menu_submenu && each?.menu_submenu.map(link => (
-                                                                <MenuItem
-                                                                    key={link?._id}><Link
-                                                                    href={`/${each?.slug?.current}/${link?.slug?.current}`}>{link?.title}</Link></MenuItem>))
+                                                                <MenuItem onClick={() => router.push(`/${each?.slug?.current}/${link?.slug?.current}`)}
+                                                                    key={link?._id}>{link?.title}</MenuItem>))
                                                         }
 
 
