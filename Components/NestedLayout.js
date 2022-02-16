@@ -8,7 +8,7 @@ function NestedLayout({children , data}) {
     const [post,setPost] = useState([]);
 
     const sidebar =`
-*[_type == "heading" && sidebar == true] {title,position,_id,
+*[_type == "heading" && sidebar == true] {title,position,_id,previewFull,
 "posts": *[_type == "post" && references(^._id)]{
               title,slug,body,_id,externalLink,link,
                   "category":category->title,

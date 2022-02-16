@@ -5,7 +5,7 @@ import {PortableText, toPlainText, urlFor} from "../sanity";
 import NextLink from 'next/link'
 import {useRouter} from "next/router";
 
-function HorizontalPostBlock({post,title , heading_slug}) {
+function HorizontalPostBlock({post,title , heading_slug,previewFull}) {
     const router = useRouter();
     console.log(router)
     console.log(router.route.split('/')[2])
@@ -41,11 +41,11 @@ function HorizontalPostBlock({post,title , heading_slug}) {
                                                                         <br/>
                                                                         <WrapItem color={`#696969`}>
                                                                             {
-                                                                                one?.previewFull ?
+                                                                                previewFull != false ?
                                                                                     <PortableText data={one?.body} />
                                                                                     :
                                                                                     <>
-                                                                                        {toPlainText(one?.body).split(0,100)}
+                                                                                        {toPlainText(one?.body).substring(0,100)}
 
                                                                                     </>
                                                                             }
@@ -53,7 +53,7 @@ function HorizontalPostBlock({post,title , heading_slug}) {
 
                                                                         </WrapItem>
                                                                     </Wrap>
-                                                                    <Text color={'#287b4f'}>Read More . . .</Text>
+
                                                                 </Flex>
 
                                                             </LinkOverlay>

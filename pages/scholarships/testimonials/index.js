@@ -12,7 +12,7 @@ function Posts({posts}) {
             <NestedLayout>
                 {
                     posts?.map(each => {
-                        return (<HorizontalPostBlock key={each?._id} post={each?.posts} title={each?.title}/>)
+                        return (<HorizontalPostBlock key={each?._id} post={each?.posts} title={each?.title} previewFull={each?.previewFull}/>)
                     })
                 }
             </NestedLayout>
@@ -29,7 +29,7 @@ export async function getServerSideProps(context) {
     const urlArray = context.req.url.split('/')
     const slug = urlArray[urlArray.length - 1]
 
-    const query = `*[_type == "heading" && featured != true && references(*[_type=="submenu"]._id) && heading_submenu->slug.current == 'testimonials'] {title,position,
+    const query = `*[_type == "heading" && featured != true && references(*[_type=="submenu"]._id) && heading_submenu->slug.current == 'testimonials'] {title,position,previewFull,
 "heading_slug":slug,
 "posts": *[_type == "post" && references(^._id)]{
               title,slug,body,_id,
