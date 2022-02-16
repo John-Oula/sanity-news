@@ -26,7 +26,7 @@ function SidebarCard({post}) {
                                        <Box key={one._id} overflowWrap={`break-word`} borderTopWidth={`1px`} borderColor={` #d6d9dc`}
                                             color={`#696969`}>
                                            <Text p={3}>
-                                               <Link href={`/${one?.category_slug?.current}/${one.slug?.current}`}
+                                               <Link href={one?.link ? one?.externalLink : `/${one?.category_slug?.current}/${one.slug?.current}`}
                                                      passHref>{one?.title}</Link>
                                            </Text>
                                        </Box>
