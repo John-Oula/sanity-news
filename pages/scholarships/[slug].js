@@ -28,7 +28,7 @@ export async function getServerSideProps(context) {
 
     const query = `*[_type == "heading" && featured != true && sidebar != true && references(*[_type=="submenu"]._id) && heading_submenu->slug.current == "scholarship-opportunities-in-netherlands"] {title,position,
 "posts": *[_type == "post" && references(^._id)]{
-              title,slug,body,_id,
+              title,slug,body,_id,link,externalLink,
                   "category":category->title,
                   "image":mainImage,
                         "category_slug":category->slug
