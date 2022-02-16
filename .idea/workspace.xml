@@ -67,6 +67,7 @@
       <change afterPath="$PROJECT_DIR$/../Thesis_Final.pdf" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../agency-alpha/agency-alpha-next/.idea/agency-alpha-next.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../agency-alpha/agency-alpha-next/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/scholarships/scholarship-opportunities-in-netherlands/[slug].js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../blogApp/.editorconfig" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../blogApp/.env.example" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../blogApp/.eslintignore" afterDir="false" />
@@ -288,6 +289,11 @@
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/youtube-react-admin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/HorizontalPostBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/HorizontalPostBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/about-us/testimonials/[slug].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/scholarships/testimonials/[slug].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/about-us/testimonials/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/scholarships/testimonials/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/scholarships/[slug].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/scholarships/[slug].js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +323,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/scholarships/scholarship-opportunities-in-netherlands" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -327,13 +333,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\blog\pages\scholarships\scholarship-opportunities-in-netherlands" />
       <recent name="C:\Users\ASUS\Desktop\blog\public" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages\about-us\testimonials" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages\scholarshpis\scholarships-opportunities-in-netherlands" />
-      <recent name="C:\Users\ASUS\Desktop\blog\pages\business" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\blog\pages\scholarships" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages\business\business-directory" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages\post" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages\search" />

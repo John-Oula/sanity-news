@@ -7,10 +7,9 @@ import {PortableText} from "../sanity";
 
 function Article({data}) {
     return (
-        <Box mb={10} border={`solid`} w={`100%`}  borderWidth={`1px`} borderColor={` #d6d9dc`} flexDirection={`column`} >
-            <Flex border={`solid`}  borderWidth={`1px`} borderColor={` #d6d9dc`} flexDirection={`column`} >
 
-                <Box border={`solid`} p={3} borderWidth={`1px`}
+
+                <Flex mb={10} p={[0,0,15,17,17]} border={`solid`} p={3} borderWidth={`1px`}
                      borderColor={` #d6d9dc`} flexDirection={`column`} >
                     <Heading color={`#287b4f`} mb={3} size={`md`} as={`h5`}>{data?.post?.title}</Heading>
                     <Flex mt={`5pt`} mb={`5pt`} alignItems={`center`}>
@@ -23,9 +22,9 @@ function Article({data}) {
                     </Flex>
 
                     <PortableText data={data?.post?.body} />
-                </Box>
-            </Flex>
-        </Box>
+                </Flex>
+
+
     );
 }
 

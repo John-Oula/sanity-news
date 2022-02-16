@@ -1,65 +1,40 @@
+import React from 'react';
+import {Container} from "@chakra-ui/react";
 import {client} from "../../sanity";
-import {Container, Flex} from "@chakra-ui/react";
-import Article from "../../Components/Article";
-import React from "react";
 import NestedLayout from "../../Components/NestedLayout";
+import HorizontalPostBlock from "../../Components/HorizontalPostBlock";
 
-const postQuery = `*[_type == "post" && slug.current == $slug][0]{
-  ...,
-  body[]{
-    ...,
+function Posts({posts}) {
 
-      _type == "forms" => {
-        "fields": @.forms->formFields
-      
-    }
-  }
-}`
+    return (
+        <Container maxW='container.xl' centerContent>
+            <NestedLayout>
+                {
+                    posts?.map(each =>  {  return (<HorizontalPostBlock key={each?._id} post={each?.posts} title={each?.title}/>)})
+                }
+            </NestedLayout>
 
-export default function BlogPost({data}) {
 
-    return(
-        <Container mt={7}  maxW='container.xl' centerContent>
-<NestedLayout>
-            <Flex w={`100%`} flexDirection={[`column`,`column`,`row`,`row`,`row`,]}>
-                <Flex w={[`100%`,`100%`,`100%`,`100%`,`100%`,]}>
-
-                    <Article data={data} />
-                </Flex>
-
-            </Flex>
-</NestedLayout>
         </Container>
-    )
+    );
 }
 
+export default Posts
 
+export async function getServerSideProps(context) {
 
-export async function getStaticPaths() {
-    const paths = await client.fetch(
-        `*[_type == "post" && defined(slug.current)]{
-        "params" :{
-        "slug": slug.current
-        }
-        }`
-    )
+    const urlArray = context.req.url.split('/')
+    const slug = urlArray[urlArray.length - 1]
 
-    return {
-        paths,
-        fallback: true,
-    }
+    const query = `*[_type == "heading" && featured != true && sidebar != true && references(*[_type=="submenu"]._id) && heading_submenu->slug.current == "scholarship-opportunities-in-netherlands"] {title,position,
+"posts": *[_type == "post" && references(^._id)]{
+              title,slug,body,_id,
+                  "category":category->title,
+                  "image":mainImage,
+                        "category_slug":category->slug
+                       }}`
+    const posts = await client.fetch(query)
 
-}
-
-export async function getStaticProps({params}) {
-    console.log(params)
-
-    const {slug} = params;
-
-    const post = await client.fetch(postQuery,{slug})
-    console.log({params})
-
-
-    return { props :{data :{post}}}
+    return {props: {posts: posts}}
 
 }
