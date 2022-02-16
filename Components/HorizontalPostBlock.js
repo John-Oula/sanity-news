@@ -46,14 +46,14 @@ function HorizontalPostBlock({post,title , heading_slug}) {
                                                                                     :
                                                                                     <>
                                                                                         {toPlainText(one?.body).split(0,100)}
-                                                                                        <Text color={'#287b4f'}>Read More . . .</Text>
+
                                                                                     </>
                                                                             }
 
 
                                                                         </WrapItem>
                                                                     </Wrap>
-
+                                                                    <Text color={'#287b4f'}>Read More . . .</Text>
                                                                 </Flex>
 
                                                             </LinkOverlay>
