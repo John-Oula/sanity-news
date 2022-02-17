@@ -12,7 +12,7 @@ function Slider({images}) {
 
     return (
 
-            <Carousel autoPlay >
+            <Carousel autoPlay={true}  showThumbs={false}>
                 {
                     images[0].carousel.map((each) =>{
                         return(

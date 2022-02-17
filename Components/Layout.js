@@ -84,16 +84,14 @@ function Layout({children}) {
 
                       <Box w={`100%`} h={`90`} overflow={`hidden`}  bgColor={`#ffffff`}>
                           <Container maxW='container.xl' >
-
-                    <Image  height={100} width={100} src={logo}/>
-                              <Flex>
+                              <Flex position={`absolute`} right={`120px`}>
                                   <TwitterIcon size={32} round={false} />
                                   <FacebookIcon size={32} round={false} />
-                                  <InstapaperIcon size={32} round={false} />
-                                  <FacebookMessengerIcon size={32} round={false} />
                                   <LinkedinIcon size={32} round={false} />
 
                               </Flex>
+                    <Image  height={100} width={100} src={logo}/>
+
                           </Container>
                 </Box>
                   <NavigationBar nav={links}/>
