@@ -1,7 +1,9 @@
 import {
     Button,
     Container,
-    Flex, Image,
+
+    Flex,
+    Image,
     Input,
     InputGroup,
     InputLeftElement,
@@ -21,9 +23,10 @@ import {Nav, Navbar} from "react-bootstrap";
 import {AiFillHome} from "react-icons/ai";
 import {urlFor} from "../sanity";
 
+
 const NavigationBar = ({nav}) => {
     const [text, setText] = useState('');
-    const router = useRouter()
+    const history = useRouter()
 
 
 
@@ -35,80 +38,89 @@ const NavigationBar = ({nav}) => {
 
             <Container maxW={'container.xl'}>
 
-                <Flex  alignItems={[`center`]} display={"flex"}  flexDirection={`row`}>
+                <Flex display={"flex"}  flexDirection={`row`}>
+                    <Navbar collapseOnSelect expand="lg" bg="#1e9339" variant="light">
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
 
-                    <Flex
-                        flexDirection={[`column`, `column`, `row`, `row`, `row`,]}>
-                        <Link href={`/`}>
-                            <Flex
-                                cursor={`pointer`}
-                                fontSize={`sm`}
-                                borderRadius={`0px`}
-                                // borderColor={`#1e9339`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
-                                pl={`3`}
-                                pr={`3`} bgColor={`#1e9339`} alignItems={'center'} color={`#ffffff`}
-                            ><AiFillHome/></Flex></Link>
-                        {
-                            nav?.map((each, index) => {
-                                return (
-                                    <>
-                                        {
-                                            each?.dropdown ?
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav>
+                                <Flex
+                                    flexDirection={[`column`, `column`, `row`, `row`, `row`,]}>
+                                    <Link href={`/`}>
+                                        <Flex
+                                            cursor={`pointer`}
+                                            fontSize={`sm`}
+                                            borderRadius={`0px`}
+                                            // borderColor={`#1e9339`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
+                                            pl={`3`}
+                                            pr={`3`} bgColor={`#1e9339`} alignItems={'center'} color={`#ffffff`}
+                                        ><AiFillHome/></Flex></Link>
+                                    {
+                                        nav?.map((each, index) => {
+                                            return (
+                                                <>
+                                                    {
+                                                        each?.dropdown ?
 
-                                                <Menu>
+                                                            <Menu>
 
-                                                    <MenuButton key={each?._id + index.toString()} fontSize={`sm`}
-                                                                borderRadius={`0px`} borderColor={`#1e9339`}
-                                                                w={`fit-content`}
-                                                        // rightIcon={<ChevronDownIcon/>}
-                                                                borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
-                                                                pl={[0, 0, 1, 1, 5]}
-                                                                pr={[0, 0, 1, 1, 5]}
-                                                                pt={[3, 3, 1, 1, 5]}
-                                                                pb={[3, 3, 1, 1, 5]}
-                                                                textAlign={[`left`, `left`, `center`, `center`, `center`]}
-                                                        // bgColor={`#0c3344`}
-                                                                alignItems={'center'}
-                                                                color={`#ffffff`}>
-                                                        <Flex alignItems={`center`}>
-                                                            <Image p={1} src={urlFor(each?.icon).url()} width={`24px`} height={`24px`} fallbackSrc={`https://via.placeholder.com/200`} />
-                                                            <Link
-                                                                href={`/${each?.slug?.current}`}>{each?.title}</Link><ChevronDownIcon
-                                                            ml={2}/>
-                                                        </Flex>
-
-
-                                                    </MenuButton>
-                                                    <MenuList  w={[`100%`, `100%`, `100%`, `fit-content`, `fit-content`]}>
-
-                                                        {
-                                                            each?.menu_submenu && each?.menu_submenu.map(link => (
-                                                                <MenuItem onClick={() => router.push(`/${each?.slug?.current}/${link?.slug?.current}`)}
-                                                                    key={link?._id}>{link?.title}</MenuItem>))
-                                                        }
+                                                                <MenuButton key={each?._id + index.toString()} fontSize={`sm`}
+                                                                            borderRadius={`0px`} borderColor={`#1e9339`}
+                                                                            w={`fit-content`}
+                                                                    // rightIcon={<ChevronDownIcon/>}
+                                                                            borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
+                                                                            pl={[0, 0, 1, 1, 5]}
+                                                                            pr={[0, 0, 1, 1, 5]}
+                                                                            pt={[3, 3, 1, 1, 5]}
+                                                                            pb={[3, 3, 1, 1, 5]}
+                                                                            textAlign={[`left`, `left`, `center`, `center`, `center`]}
+                                                                    // bgColor={`#0c3344`}
+                                                                            alignItems={'center'}
+                                                                            color={`#ffffff`}>
+                                                                    <Flex alignItems={`center`}>
+                                                                        <Image p={1} src={urlFor(each?.icon).url()} width={`24px`} height={`24px`} fallbackSrc={`https://via.placeholder.com/200`} />
+                                                                        <Link
+                                                                            href={`/${each?.slug?.current}`}>{each?.title}</Link><ChevronDownIcon
+                                                                        ml={2}/>
+                                                                    </Flex>
 
 
-                                                    </MenuList>
-                                                </Menu>
-                                                :
-                                                <Flex cursor={`pointer`} key={each?._id + index.toString()} fontSize={`sm`}
-                                                      borderRadius={`0px`}
-                                                    // borderColor={`white`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
-                                                      pl={`1`}
-                                                      pr={`1`} color={`white`} alignItems={'center'} bgColor={`#1e9339`}>
-                                                    <Image p={1} src={urlFor(each?.icon).url()} width={`24px`} height={`24px`} fallbackSrc={`https://via.placeholder.com/200`} />
+                                                                </MenuButton>
+                                                                <MenuList  w={[`100%`, `100%`, `100%`, `fit-content`, `fit-content`]}>
 
-                                                    <Text><Link href={`/${each?.slug?.current}`}>{each?.title}</Link></Text>
-                                                </Flex>
+                                                                    {
+                                                                        each?.menu_submenu && each?.menu_submenu.map(link => (
+                                                                            <MenuItem
+                                                                                key={link?._id}><Link
+                                                                                href={`/${each?.slug?.current}/${link?.slug?.current}`}>{link?.title}</Link></MenuItem>))
+                                                                    }
 
-                                        }
 
-                                    </>
-                                )
-                            })
-                        }
+                                                                </MenuList>
+                                                            </Menu>
+                                                            :
+                                                            <Flex cursor={`pointer`} key={each?._id + index.toString()} fontSize={`sm`}
+                                                                  borderRadius={`0px`}
+                                                                // borderColor={`white`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
+                                                                  pl={`1`}
+                                                                  pr={`1`} color={`white`} alignItems={'center'} bgColor={`#1e9339`}>
+                                                                <Image p={1} src={urlFor(each?.icon).url()} width={`24px`} height={`24px`} fallbackSrc={`https://via.placeholder.com/200`} />
 
-                    </Flex>
+                                                                <Text><Link href={`/${each?.slug?.current}`}>{each?.title}</Link></Text>
+                                                            </Flex>
+
+                                                    }
+
+                                                </>
+                                            )
+                                        })
+                                    }
+
+                                </Flex>
+
+                            </Nav>
+
+                        </Navbar.Collapse>
                         <Flex  p={2}>
                             <form onSubmit={(e) => {
                                 e.preventDefault()
@@ -127,7 +139,7 @@ const NavigationBar = ({nav}) => {
 
                             </form>
                         </Flex>
-
+                    </Navbar>
 
                 </Flex>
             </Container>

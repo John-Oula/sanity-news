@@ -37,11 +37,7 @@ export function toPlainText(blocks = []) {
 }
 
 const serializers = {
-    // block:{
-    //     h4: ({children}) => {
-    //         return (<Heading  color={`#1e9339`}>{children}</Heading>)
-    //     },
-    // },
+
     types: {
         youtube: ({node}) => {
             const { url } = node
@@ -83,7 +79,13 @@ const serializers = {
                 : <a style={{ color:'#1e9339'}}  href={'href'}>{children}</a>
         },
 
-    }
+    },
+    // block:{
+    //     h4: ({children}) => {
+    //         console.log(children)
+    //         return (<Heading  color={`#1e9339`}>{children}</Heading>)
+    //     },
+    // },
 }
 
 

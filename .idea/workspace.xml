@@ -288,10 +288,7 @@
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/youtube-react-admin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Article.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/HorizontalPostBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/HorizontalPostBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/business/business-directory/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/business/business-directory/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/NavigationBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sanity.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -404,12 +401,22 @@
       <workItem from="1644906208939" duration="29284000" />
       <workItem from="1645012933691" duration="1033000" />
       <workItem from="1645021121201" duration="709000" />
-      <workItem from="1645088667904" duration="26964000" />
+      <workItem from="1645088667904" duration="28522000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
