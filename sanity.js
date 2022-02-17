@@ -75,8 +75,8 @@ const serializers = {
             // Read https://css-tricks.com/use-target_blank/
             const { blank, href } = mark
             return blank ?
-                <a style={{ color:'#1e9339'}} href={'href'} target="_blank" rel="noopener">{children}</a>
-                : <a style={{ color:'#1e9339'}}  href={'href'}>{children}</a>
+                <a style={{ color:'#1e9339'}} href={href} target="_blank" rel="noopener">{children}</a>
+                : <a style={{ color:'#1e9339'}}  href={href}>{children}</a>
         },
 
     },
