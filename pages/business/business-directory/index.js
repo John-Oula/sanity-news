@@ -1,4 +1,4 @@
-import {client, PortableText} from "../../../sanity";
+import {client, RichText} from "../../../sanity";
 import {
     Box,
     Button,
@@ -54,7 +54,7 @@ export default function BusinessDirectory({posts}) {
 
                                 </Flex>
 
-                                <PortableText posts={posts?.post?.body} />
+                                <RichText posts={posts?.post?.body} />
                                 <DirectoryNavbar  />
                                 <CircleFilter state={true} data={posts}/>
 

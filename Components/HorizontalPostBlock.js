@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Flex, Heading, Text, Image, LinkBox, LinkOverlay, SimpleGrid, Wrap, WrapItem} from "@chakra-ui/react";
 import {ArrowForwardIcon} from "@chakra-ui/icons";
-import {PortableText, toPlainText, urlFor} from "../sanity";
+import {RichText, toPlainText, urlFor} from "../sanity";
 import NextLink from 'next/link'
 import {useRouter} from "next/router";
 
@@ -42,7 +42,7 @@ function HorizontalPostBlock({post,title , heading_slug,previewFull}) {
                                                                         <WrapItem color={`#696969`}>
                                                                             {
                                                                                 previewFull != false ?
-                                                                                    <PortableText data={one?.body} />
+                                                                                    <RichText data={one?.body} />
                                                                                     :
                                                                                     <>
                                                                                         {toPlainText(one?.body).substring(0,100)}...  Read more >

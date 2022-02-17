@@ -5,9 +5,10 @@ import React from 'react'
 import InlineVideo from "./Components/InlineVideo";
 import imageUrlBuilder from '@sanity/image-url'
 import Team from "./Components/Team";
-
-const BlockContent = require('@sanity/block-content-to-react')
+import Link from "next/link";
+import PortableText  from '@sanity/block-content-to-react'
 const sanityClient = require('@sanity/client')
+import {Box, Flex, Heading, Text} from "@chakra-ui/react";
 
 const config = {
     projectId: 'y90icmhk',
@@ -36,6 +37,11 @@ export function toPlainText(blocks = []) {
 }
 
 const serializers = {
+    // block:{
+    //     h4: ({children}) => {
+    //         return (<Heading  color={`#1e9339`}>{children}</Heading>)
+    //     },
+    // },
     types: {
         youtube: ({node}) => {
             const { url } = node
@@ -56,12 +62,28 @@ const serializers = {
         teams: ({node}) => {
             return (<Team data={node}/>)
         },
+
         code: (props) => (
             <pre data-language={props.node.language}>
         <code>{props.node.code}</code>
       </pre>
         ),
     },
+    marks: {
+        // internalLink: ({mark, children}) => {
+        //     const {slug = {}} = mark
+        //     const href = `/${slug.current}`
+        //     return <a href={href}>{children}</a>
+        // },
+        link: ({mark, children}) => {
+            // Read https://css-tricks.com/use-target_blank/
+            const { blank, href } = mark
+            return blank ?
+                <a style={{ color:'#1e9339'}} href={'href'} target="_blank" rel="noopener">{children}</a>
+                : <a style={{ color:'#1e9339'}}  href={'href'}>{children}</a>
+        },
+
+    }
 }
 
 
@@ -76,9 +98,9 @@ export function urlFor(source) {
 }
 
 
-export const PortableText = ({data}) => {
+export const RichText = ({data}) => {
     return (
-        <BlockContent blocks={data} serializers={serializers} {...config} />
+        <PortableText  blocks={data} serializers={serializers} {...config} />
     )
 }
 

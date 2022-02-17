@@ -1,6 +1,6 @@
 import React ,{useState}from 'react';
 import {Box, Button, Image} from "@chakra-ui/react";
-import {PortableText, toPlainText, urlFor} from "../sanity";
+import {RichText, toPlainText, urlFor} from "../sanity";
 
 function Card({post}) {
     const [extend ,setExtend] = useState();
@@ -44,7 +44,7 @@ function Card({post}) {
                     {
                         extend ?
                             <>
-                                {post?.body && <PortableText data={post?.body}/>}
+                                {post?.body && <RichText data={post?.body}/>}
                             </>
                             :
 

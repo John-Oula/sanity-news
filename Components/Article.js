@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, Flex, Heading, Text} from "@chakra-ui/react";
 import {TimeIcon} from "@chakra-ui/icons";
 import Moment from "react-moment";
-import {PortableText} from "../sanity";
+import {RichText} from "../sanity";
 
 
 function Article({data}) {
@@ -25,7 +25,7 @@ function Article({data}) {
 
                     </Flex>
 
-                    <PortableText data={data?.post?.body} />
+                    <RichText data={data?.post?.body} />
                 </Flex>
 
 
