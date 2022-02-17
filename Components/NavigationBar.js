@@ -101,6 +101,7 @@ const NavigationBar = ({nav}) => {
                                                             :
                                                             <Flex cursor={`pointer`} key={each?._id + index.toString()} fontSize={`sm`}
                                                                   borderRadius={`0px`}
+                                                                  alignItems={`center`}
                                                                 // borderColor={`white`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
                                                                   pl={`1`}
                                                                   pr={`1`} color={`white`} alignItems={'center'} bgColor={`#1e9339`}>
