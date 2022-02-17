@@ -10,11 +10,16 @@ const postQuery = `*[_type == "post" && slug.current == $slug][0]{
     ...,
 
       _type == "forms" => {
-        "fields": @.forms->formFields
-      
+        "fields": @.forms->formFields,
+         "formType": @.forms->slug.current
+    },
+
+         _type == "teams" => {
+        "members": @.teamMember[]->
     }
   }
 }`
+
 
 export default function BlogPost({data}) {
 

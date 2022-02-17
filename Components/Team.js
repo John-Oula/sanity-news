@@ -1,20 +1,22 @@
 import React from 'react';
 import {Circle, Flex, Heading, Image, Text} from "@chakra-ui/react";
-import {urlFor} from "../sanity";
+import {toPlainText, urlFor} from "../sanity";
 
 function Team({data}) {
 
     return (
-        <Flex flexDirection={[`column`,`row`,`row`,`row`,`row`,]}>
+        <Flex flexDirection={[`column`,`column`,`column`,`column`,`column`,]}>
             {
                 data?.members?.map(each =>{
                     return(
-                        <Flex key={each._id} flexDirection={`column`} textAlign={`center`} justifyContent={`center`} p={5}>
+                        <Flex key={each._id} flexDirection={`row`} alignItems={`center`} textAlign={`left`} justifyContent={`flex-start`} p={5}>
                             <Circle overflow={`hidden`} size={`150pt`}>
                                 <Image src={urlFor(each?.image).url()} width={`auto`} h={`auto`} fallbackSrc={`https://via.placeholder.com/200`} />
                             </Circle>
-                            <Heading mt={5} size={`md`} as={`h5`}>{each?.name}</Heading>
-                            <Text fontSize={`sm`}> {each?.description}</Text>
+                            <Flex  m={5}  flexDirection={`column`}>
+                                <Heading mb={5}  size={`md`} as={`h5`}>{each?.name}</Heading>
+                                <Text fontSize={`sm`} color={`#696969`}>   {toPlainText(each?.bio)}</Text>
+                            </Flex>
 
                         </Flex>
                     )

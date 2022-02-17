@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import { EditorState, convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 
-import {Box, Button, Flex, FormControl,Checkbox, FormLabel, Input, InputGroup, Select} from "@chakra-ui/react";
+import {Box, Button,Textarea , Flex, FormControl,Checkbox, FormLabel, Input, InputGroup, Select} from "@chakra-ui/react";
 import {client} from "../sanity";
 import {useForm} from "react-hook-form";
 import {useRouter} from "next/router";
@@ -127,19 +127,6 @@ function Forms({data}) {
 
     const onSubmit = async (values) => {
         console.log(data)
-        // The compiled schema type for the content type that holds the block array
-        const blockContentType = schema.get('company')
-            .fields.find(field => field.name === 'body').type
-
-        // convert to html
-        const html =  draftToHtml(convertToRaw(editor.getCurrentContent()))
-
-        const blocks = blockTools.htmlToBlocks(html, blockContentType)
-
-
-        const formData = Object.assign(values,{"body":blocks})
-        console.log(formData)
-
 
         setLoading(true)
 
@@ -226,6 +213,19 @@ function Forms({data}) {
         else if (data?.formType === 'companies-form' ){
             console.log('company')
 
+            // The compiled schema type for the content type that holds the block array
+            const blockContentType = schema.get('company')
+                .fields.find(field => field.name === 'body').type
+
+            // convert to html
+            const html =  draftToHtml(convertToRaw(editor.getCurrentContent()))
+
+            const blocks = blockTools.htmlToBlocks(html, blockContentType)
+
+
+            const formData = Object.assign(values,{"body":blocks})
+            console.log(formData)
+
             const logo = formData.logo[0]
             const intro_image = formData.intro_image[0]
             const cover_image = formData.cover_image[0]
@@ -281,8 +281,20 @@ function Forms({data}) {
                 })
 
         }
-        else setLoading(false)
+        else if (data?.formType === 'contact-us' ){
+            fetch('/api/mail', {
+                method: 'post',
+                body: JSON.stringify(values)
+            })
+                .then(data =>{
 
+                    setLoading(false)
+                }) .catch(error =>{
+
+                    setLoading(false)
+                })
+        }
+        else  null
     }
 
     return (
@@ -341,6 +353,16 @@ function Forms({data}) {
                                                     <>
 
                                                         <Editor editorState={editor} onEditorStateChange={editorText} />
+
+
+                                                    </>
+                                                        :
+                                                    each?.fieldType === 'textarea' ?
+                                                    <>
+
+
+                                                            <Textarea   {...register(each?.slug?.current)} laceholder='Type your message here..'/>
+
 
 
                                                     </>

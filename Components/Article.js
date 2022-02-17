@@ -9,7 +9,7 @@ function Article({data}) {
     return (
 
 
-                <Flex mb={10} p={[0,0,15,17,17]} border={`solid`} p={3} borderWidth={`1px`}
+                <Flex w={`100%`} mb={10} p={[0,0,15,17,17]} border={`solid`} p={3} borderWidth={`1px`}
                      borderColor={` #d6d9dc`} flexDirection={`column`} >
                     <Heading color={`#287b4f`} mb={3} size={`md`} as={`h5`}>{data?.post?.title}</Heading>
                     <Flex mt={`5pt`} mb={`5pt`} alignItems={`center`}>

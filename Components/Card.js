@@ -1,10 +1,20 @@
-import React from 'react';
-import {Box, Image} from "@chakra-ui/react";
-import {PortableText, urlFor} from "../sanity";
+import React ,{useState}from 'react';
+import {Box, Button, Image} from "@chakra-ui/react";
+import {PortableText, toPlainText, urlFor} from "../sanity";
 
 function Card({post}) {
+    const [extend ,setExtend] = useState();
+
+    const handleClick = () =>{
+        if(extend)
+            setExtend(false)
+        else
+            setExtend(true)
+    }
+
+
     return (
-        <Box boxShadow={`lg`} maxW='sm' h={`fit-content`}  borderWidth='1px' borderRadius='lg' overflow='hidden'>
+        <Box boxShadow={`lg`} maxW='sm' h={ `fit-content` }  borderWidth='1px' borderRadius='lg' overflow='hidden'>
             {post?.cover_image?.asset &&
             <Image fallbackSrc={`https://via.placeholder.com/200`} src={urlFor(post?.cover_image)?.url()}
                    w={`100%`} h={`100%`}/>}
@@ -31,12 +41,25 @@ function Card({post}) {
                     lineHeight='tight'
 
                 >
+                    {
+                        extend ?
+                            <>
+                                {post?.body && <PortableText data={post?.body}/>}
+                            </>
+                            :
 
-                    {post?.body && <PortableText data={post?.body}/>}
+                   <>
+                       {toPlainText(post?.body)?.substring(0, 200)} ...
+
+                   </>
+                    }
+
+
 
                 </Box>
 
-
+                <Button mt={2} w={`100%`} colorScheme={`green`}
+                        onClick={handleClick}> {extend ? "Less" : "More"} </Button>
             </Box>
         </Box>
     );
