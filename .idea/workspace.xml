@@ -288,16 +288,9 @@
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/youtube-react-admin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Article.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Forms.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Forms.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Components/Slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Team.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/about-us/[slug].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about-us/[slug].js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/mail.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +305,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedIndex" value="2" />
@@ -409,7 +402,7 @@
       <workItem from="1644906208939" duration="29284000" />
       <workItem from="1645012933691" duration="1033000" />
       <workItem from="1645021121201" duration="709000" />
-      <workItem from="1645088667904" duration="15651000" />
+      <workItem from="1645088667904" duration="18803000" />
     </task>
     <servers />
   </component>
