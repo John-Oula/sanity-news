@@ -23,7 +23,7 @@ function Post({data}) {
             </Flex>
 
             <Text>{toPlainText(data?.body)?.substring(0,300)}</Text>
-            <Button mt={`10pt`} onClick={() => router.push(`/events/${data.slug?.current}`)} borderColor={` #d6d9dc`} variant='outline' borderRadius={`0px`} bgColor={`white`}>Read
+            <Button mt={`10pt`} onClick={() => router.push(`/post/${data.slug?.current}`)} borderColor={` #d6d9dc`} variant='outline' borderRadius={`0px`} bgColor={`white`}>Read
                 More ...</Button>
         </Box>
     );
