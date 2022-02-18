@@ -18,7 +18,7 @@ function Layout({children}) {
     const [footer, setFooter] = useState([]);
     const [partners, setPartners] = useState([]);
 
-    NProgress.configure({showSpinner: false});
+    NProgress.configure({showSpinner: true});
 
     Router.events.on('routeChangeStart', () => {
         NProgress.start();

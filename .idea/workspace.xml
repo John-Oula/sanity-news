@@ -288,7 +288,9 @@
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../youtube-react-admin/.idea/youtube-react-admin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/NavigationBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,6 +301,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -319,6 +322,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pages/scholarships/scholarship-opportunities-in-netherlands" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -335,6 +339,7 @@
       <recent name="C:\Users\ASUS\Desktop\blog\pages\scholarshpis\scholarships-opportunities-in-netherlands" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\blog\Components" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages\scholarships" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages\business\business-directory" />
       <recent name="C:\Users\ASUS\Desktop\blog\pages\post" />
@@ -400,7 +405,7 @@
       <workItem from="1644906208939" duration="29284000" />
       <workItem from="1645012933691" duration="1033000" />
       <workItem from="1645021121201" duration="709000" />
-      <workItem from="1645088667904" duration="32720000" />
+      <workItem from="1645088667904" duration="35716000" />
     </task>
     <servers />
   </component>

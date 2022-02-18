@@ -10,18 +10,22 @@ a {
 
   text-decoration: none !important ;
 }
+.article a {
 
+  margin-bottom: 10px !important ;
+}
 * {
   box-sizing: border-box !important ;
 }
 
-h2,h1,h3,h4,h5,h6{
+.article h2,.article  h1,.article  h3,.article h4,.article h5,.article h6{
 
-  margin-bottom: 20px !important  ;
+  margin-bottom: 18px !important  ;
+  margin-top: 10px !important  ;
 }
 
-p{
-  margin-bottom: 10px !important  ;
+.article p{
+  margin-bottom: 24px !important  ;
 
 }
 blockquote {
@@ -39,19 +43,22 @@ ol {
 ul {
   list-style: circle !important ;
 }
-h4 {
+.article p{
+  font-size: 1.1rem !important;
+}
+.article h4 {
   font-size: 1.2rem !important ;
   font-weight: 400 !important ;
 }
-h3 {
+.article h3 {
   font-size: 1.35rem !important ;
   font-weight: 400 !important ;
 }
-h2 {
+.article h2 {
   font-size: 1.65rem !important ;
   font-weight: 600 !important ;
 }
-h1 {
-  font-size: 1.875rem !important ;
+.article h1 {
+  font-size: 1.9rem !important ;
   font-weight: 900 !important ;
 }
