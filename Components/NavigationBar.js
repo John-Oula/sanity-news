@@ -52,8 +52,7 @@ const NavigationBar = ({nav}) => {
                                             fontSize={`sm`}
                                             borderRadius={`0px`}
                                             // borderColor={`#1e9339`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
-                                            pl={`3`}
-                                            pr={`3`} bgColor={`#1e9339`} alignItems={'center'} color={`#ffffff`}
+                                            p={[5,4,3,3,3]} bgColor={`#1e9339`} alignItems={'center'} color={`#ffffff`}
                                         ><AiFillHome/></Flex></Link>
                                     {
                                         nav?.map((each, index) => {
@@ -69,10 +68,7 @@ const NavigationBar = ({nav}) => {
                                                                             w={`fit-content`}
                                                                     // rightIcon={<ChevronDownIcon/>}
                                                                             borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
-                                                                            pl={[0, 0, 1, 1, 5]}
-                                                                            pr={[0, 0, 1, 1, 5]}
-                                                                            pt={[3, 3, 1, 1, 5]}
-                                                                            pb={[3, 3, 1, 1, 5]}
+                                                                            p={[5,4,3,3,3]}
                                                                             textAlign={[`left`, `left`, `center`, `center`, `center`]}
                                                                     // bgColor={`#0c3344`}
                                                                             alignItems={'center'}
@@ -103,8 +99,7 @@ const NavigationBar = ({nav}) => {
                                                                   borderRadius={`0px`}
                                                                   alignItems={`center`}
                                                                 // borderColor={`white`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
-                                                                  pl={`1`}
-                                                                  pr={`1`} color={`white`} alignItems={'center'} bgColor={`#1e9339`}>
+                                                                  p={[5,4,3,3,3]} color={`white`}  bgColor={`#1e9339`}>
                                                                 <Image p={1} src={urlFor(each?.icon).url()} width={`24px`} height={`24px`} fallbackSrc={`https://via.placeholder.com/200`} />
 
                                                                 <Text><Link href={`/${each?.slug?.current}`}>{each?.title}</Link></Text>
