@@ -8,7 +8,7 @@ import Team from "./Components/Team";
 import Link from "next/link";
 import PortableText  from '@sanity/block-content-to-react'
 const sanityClient = require('@sanity/client')
-import {Box, Flex, Heading, Text} from "@chakra-ui/react";
+import {Box, Flex, Heading,Spacer, Circle, Text, Button} from "@chakra-ui/react";
 
 const config = {
     projectId: 'y90icmhk',
@@ -76,7 +76,15 @@ const serializers = {
             const { blank, href } = mark
             return blank ?
                 <a style={{ color:'#1e9339'}} href={href} target="_blank" rel="noopener">{children}</a>
-                : <a style={{ color:'#1e9339'}}  href={href}>{children}</a>
+                : <a style={{ color:'#1e9339'}}  href={href}><Flex alignItems={`center`} p={5} boxShadow={`lg`} borderRadius={`10px`}>
+                    <Circle bgGradient='linear(to-l, #1e9339, #ffd24a)' size={`24px`} m={2} ></Circle>
+                    {children}
+                    <Spacer />
+                    <Button colorScheme={`green`}
+                          > Visit </Button>
+
+
+                </Flex></a>
         },
 
     },

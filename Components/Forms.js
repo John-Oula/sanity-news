@@ -4,7 +4,7 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import dynamic from 'next/dynamic';
 import { EditorState, convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
-
+import { useCheckboxGroup } from '@chakra-ui/react'
 import {Box, Button,Textarea , Flex, FormControl,Checkbox, FormLabel, Input, InputGroup, Select} from "@chakra-ui/react";
 import {client} from "../sanity";
 import {useForm} from "react-hook-form";
@@ -21,6 +21,8 @@ function Forms({data}) {
     const {handleSubmit, register} = useForm();
     const [loading, setLoading] = useState();
     const [editor, setEditor] = useState(EditorState.createEmpty());
+
+    const { value, getCheckboxProps } = useCheckboxGroup()
 
     const schema = Schema.compile({
         name: "schema",
@@ -131,10 +133,10 @@ function Forms({data}) {
         setLoading(true)
 
 
-        if (data?.formType === 'cv-form' || data?.formType === 'users') {
-            const cv = formData.cv[0]
+        if (data?.formType === 'cv-form' || data?.formType === 'registration-form') {
+            const cv = values.cv[0]
             await client.create({
-                ...formData,
+                ...values,
                 _type: data?.formType === 'cv-form' ? 'cv_upload' : data?.formType === 'companies-form' ? 'company' : 'users'
             })
                 .then(response => {
@@ -148,7 +150,7 @@ function Forms({data}) {
                             // If you want to set a specific asset field you can to the following:
                             console.log(asset)
                             if (data?.formType === 'cv-form') {
-                                const motivationLetter = formData.motivation_letter[0]
+                                const motivationLetter = values.motivation_letter[0]
                                 return client.assets
                                     .upload('file', motivationLetter, {
                                         filename: motivationLetter.name
@@ -176,7 +178,11 @@ function Forms({data}) {
                                             .commit()
 
                                     })
-                                    .then(() => router.push('/post/message'))
+                                    .then(() => {
+                                        setLoading(false)
+                                        router.push('/post/message')
+
+                                    })
                                     .catch(error => {
                                         setLoading(false)
                                     })
@@ -289,6 +295,7 @@ function Forms({data}) {
                 .then(data =>{
 
                     setLoading(false)
+                    router.push('/post/message')
                 }) .catch(error =>{
 
                     setLoading(false)
@@ -340,8 +347,8 @@ function Forms({data}) {
                                                     <>
 
                                                         {each.checkboxOptions.map((option) => (
-                                                            <InputGroup key={option._key} {...register(option?.title)}>
-                                                                <Checkbox>{option?.title}</Checkbox>
+                                                            <InputGroup  key={option._key} {...register(option?.title)}>
+                                                                <Checkbox {...getCheckboxProps({ value:option?.title})} >{option?.title}</Checkbox>
                                                             </InputGroup>
 
 

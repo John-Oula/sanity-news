@@ -13,6 +13,8 @@ a {
 .article a {
 
   margin-bottom: 10px !important ;
+  text-decoration: none !important ;
+
 }
 * {
   box-sizing: border-box !important ;
@@ -35,14 +37,9 @@ blockquote {
 ol,
 ul {
   margin: 1.2em !important ;
-}
-ol {
-  list-style: decimal !important ;
+  list-style: none !important ;
 }
 
-ul {
-  list-style: circle !important ;
-}
 .article p{
   font-size: 1.1rem !important;
 }
