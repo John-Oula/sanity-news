@@ -76,9 +76,11 @@ const serializers = {
             const { blank, href } = mark
             return blank ?
                 <a style={{ color:'#1e9339'}} href={href} target="_blank" rel="noopener">{children}</a>
-                : <a style={{ color:'#1e9339'}}  href={href}><Flex alignItems={`center`} p={5} boxShadow={`lg`} borderRadius={`10px`}>
+                : <a style={{ color:'#1e9339', width : `100%`, overflow: `break-word`}} target="_blank" rel="noopener"  href={href}>
+                    <Flex alignItems={`center`} p={5} boxShadow={`lg`} borderRadius={`10px`}>
                     <Circle bgGradient='linear(to-l, #1e9339, #ffd24a)' size={`24px`} m={2} ></Circle>
                     {children}
+                        {/*<ExternalLinkIcon mx='2px' />*/}
                     <Spacer />
                     <Button colorScheme={`green`}
                           > Visit </Button>

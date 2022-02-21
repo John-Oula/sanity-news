@@ -10,6 +10,10 @@ a {
 
   text-decoration: none !important ;
 }
+a:hover {
+
+  color: inherit !important ;
+}
 .article a {
 
   margin-bottom: 10px !important ;

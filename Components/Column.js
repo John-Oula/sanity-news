@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {Box, Flex, Heading, Text} from "@chakra-ui/react";
-import {toPlainText} from "../sanity";
+import {Box, Flex, Heading, Text,Image} from "@chakra-ui/react";
+import {toPlainText,urlFor} from "../sanity";
 import Link from "next/link";
 
 function Column({position,post}) {
@@ -27,7 +27,7 @@ function Column({position,post}) {
         <>
 
           
-                <Flex ml={[0,0,4,4,4]} mt={[4,4,0,0,0]} mb={`5%`} height={`fit-content`}  w={`100%`}
+                <Flex   ml={[0,0,4,4,4]} mt={[4,4,0,0,0]} mb={`5%`} height={`fit-content`}  w={`100%`}
                    border={`solid`} borderWidth={[`0px`,0,`1px`,`1px`,`1px`]}
                    borderColor={` #d6d9dc`} flexDirection={`column`}>
                 <Box color={ position === 2 ? `grey.500` :`white`}
@@ -44,12 +44,32 @@ function Column({position,post}) {
                             <>
                                 {
                                     each.posts.length > 0 && each.posts?.slice(0, 7).map((one) => (
-                                            <Box key={one._id} overflowWrap={`break-word`} borderTopWidth={`1px`} borderColor={` #d6d9dc`}
+                                            <Box  key={one._id} overflowWrap={`break-word`} borderTopWidth={`1px`} borderColor={` #d6d9dc`}
                                                  color={`#696969`}>
-                                                <Text p={3}>
-                                                    <Link href={ one?.link ? one?.externalLink : `/post/${one.slug?.current}`}
-                                                          passHref>{one?.title}</Link>
-                                                </Text>
+                                              <Box position={`relative`}>
+                                              {
+                                                  one?.imagePreview ?
+                                                  <Heading p={3} as={`h1`} size={`md`} casing={ `capitalize`}  color={ `#ffffff`} position={`absolute`} bgColor={ `#1e9339c7`}  top={`40%`} w={`50%`} ><Link isExternal  isExternal={one?.link && one?.externalLink && true} href={ one?.link ? one?.externalLink : `/post/${one.slug?.current}`}
+                                                  passHref>{one?.title}</Link></Heading>
+
+                                                  :
+                                                  <Text  overflow={`break-word`}  h={`46pt`}   p={3}>
+                                                    <Link isExternal  isExternal={one?.link && one?.externalLink && true} href={ one?.link ? one?.externalLink : `/post/${one.slug?.current}`}
+                                                          passHref>{one?.title}</Link></Text>
+                                              }
+                                                
+                                                {
+                                                        one?.imagePreview ? <>
+
+                                                         <Box overflow={`hidden`} h={`196pt`} w={`100%`}>
+                                    <Image src={urlFor(one?.image).url()} width={`100%`} h={`auto`} fallbackSrc={`https://via.placeholder.com/200`} />
+                                </Box>
+                                                        </>
+
+                                                        :
+                                                        <></>
+                                                    }
+                                                  </Box>
                                             </Box>
                                         )
                                     )
@@ -70,6 +90,7 @@ function Column({position,post}) {
                                                         <Link href={`/${one?.category}/${one.slug?.current}`}
                                                               passHref>{one?.title}</Link>
                                                     </Text>
+                                                  
                                                     <Text color={`black`}>{toPlainText(one?.body).substring(0,300)}</Text>
                                                     <Text mt={`2pt`} onClick={() => router.push(`/events/${one.slug.current}`)} >Read
                                                         More ...</Text>
