@@ -12,21 +12,22 @@ function Slider({images}) {
 
     return (
 
-            <Carousel w={`100%`}  autoPlay={true}  showThumbs={false}>
+            <Carousel   autoPlay={true}  showThumbs={false}>
+                 <Box overflow={`hidden`} h={`400px`} >
                 {
                     images[0].carousel.map((each) =>{
                         return(
 
-                                <Box bg={`black`} w={`100%`} overflow={`hidden`} h={`400px`} >
-                                    <Image fallbackSrc={`https://via.placeholder.com/200`} src={urlFor(each.image).url()} w={`100%`} h={`auto`} />
-                                </Box>
+                               
+                                   <Image fallbackSrc={`https://via.placeholder.com/200`} src={urlFor(each.image).url()} w={`100%`} h={`auto`} /> 
+                                
 
 
                         )
                     })
                 }
 
-
+</Box>
             </Carousel>
 
     );
