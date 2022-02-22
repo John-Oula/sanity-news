@@ -47,7 +47,7 @@ function NestedLayout({children , data}) {
                 <Flex flexDirection={`column`}  w={[`100%`,`100%`,`20%`,`20%`,`20%`,]} >
 
                     {/*<Column post={data} key={1} position={10} />*/}
-                    <TabColumn post={data} key={20} firstPosition={11} secondPosition={12} />
+                    {/* <TabColumn post={data} key={20} firstPosition={11} secondPosition={12} /> */}
                     {/*<Column post={data} key={5} position={13} />*/}
                     {/*<Column post={data} key={5} position={14} />*/}
                     { post &&

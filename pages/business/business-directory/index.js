@@ -57,6 +57,62 @@ export default function BusinessDirectory({posts}) {
 
                                 <RichText posts={posts?.post?.body} />
                                 <DirectoryNavbar  />
+          {/* <Flex>
+          <Menu>
+  {({ isOpen }) => (
+    <>
+      <MenuButton isActive={isOpen} as={Button}  m={2} rightIcon={<ChevronDownIcon />}>
+        Entries
+      </MenuButton>
+      <MenuList>
+        <MenuItem>All Words</MenuItem>
+        <MenuItem>Any Words</MenuItem>
+        <MenuItem>Exact Words</MenuItem>
+        
+      </MenuList>
+    </>
+  )}
+</Menu>
+<Menu>
+  {({ isOpen }) => (
+    <>
+      <MenuButton isActive={isOpen} as={Button}  m={2} rightIcon={<ChevronDownIcon />}>
+        Country
+      </MenuButton>
+      <MenuList>
+        <MenuItem></MenuItem>
+        
+      </MenuList>
+    </>
+  )}
+</Menu>
+<Menu>
+  {({ isOpen }) => (
+    <>
+      <MenuButton isActive={isOpen} as={Button}  m={2} rightIcon={<ChevronDownIcon />}>
+        City
+      </MenuButton>
+      <MenuList>
+        <MenuItem></MenuItem>
+        
+      </MenuList>
+    </>
+  )}
+</Menu>
+<Menu >
+  {({ isOpen }) => (
+    <>
+      <MenuButton isActive={isOpen} as={Button}  m={2} rightIcon={<ChevronDownIcon />}>
+        Category
+      </MenuButton>
+      <MenuList>
+        <MenuItem></MenuItem>
+        
+      </MenuList>
+    </>
+  )}
+</Menu>
+              </Flex> */}
                                 <CircleFilter state={true} data={posts}/>
 
                                 <Center mt={10}  >

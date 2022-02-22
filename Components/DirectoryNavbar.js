@@ -49,7 +49,7 @@ const DirectoryNavbar = () => {
 
             <Container maxW={'container.xl'}>
 
-                <Flex alignItems={`center`} display={"flex"} flexDirection={`row`}>
+                <Flex alignItems={`center`} p={2} display={"flex"} flexDirection={`row`}>
                     <Navbar collapseOnSelect expand="lg" bg="#1e9339" variant="light">
                         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
 
@@ -60,13 +60,13 @@ const DirectoryNavbar = () => {
 
 
                                     <Flex p={2} flexGrow={1} cursor={`pointer`} fontSize={`sm`} borderRadius={`0px`}>
-                                    <Flex alignItems={`center`}>
+                                    <Flex alignItems={`center`} p={2}>
                                                             <AiFillDatabase/>
                                                                          <Text><Link href={`/`}>Companies & Organisations</Link></Text>
                                                                     </Flex>
                                        
                                     </Flex>
-                                    <Flex alignItems={`center`}>
+                                    <Flex alignItems={`center`} p={2}>
                                                             <AiFillPlusCircle/>
                                                             <Text><Link href={`/registration/companies-form`}>Add entry</Link></Text>
                                                                     
@@ -85,8 +85,7 @@ const DirectoryNavbar = () => {
                                                 <Input w={`100%`} onChange={(e) => setText(e.target.value)}
                                                        color={`#444444`}
                                                        type='text'
-                                                       bgColor={`#ffffff`} border={`solid`} borderColor={`#BC1F28`}
-                                                       borderWidth={`1px`}
+                                                       bgColor={`#ffffff`} 
                                                 placeholder={`Search Keywords`}
                                                 />
                                             </InputGroup>
