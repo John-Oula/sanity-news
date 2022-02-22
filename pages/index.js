@@ -28,9 +28,7 @@ export default function Home({ posts, carousel}) {
                                 <Column post={posts}  position={2} key={2}/>
                             </Flex>
 
-                            <HorizontalCard  key={3} position={3} post={posts}/>
-                            <HorizontalCard key={4} position={4} post={posts}/>
-                            <HorizontalCard  key={5} position={5} post={posts}/>
+                           
                             </Flex>
 
                         </Flex>
@@ -38,11 +36,11 @@ export default function Home({ posts, carousel}) {
                 </NestedLayout>
 
                 <Stack direction={['column', 'row']} spacing='24px'>
-
+{/* 
                     <Column post={posts} position={6} key={6}  />
                     <Column post={posts}  position={7} key={7} />
                     <Column post={posts}  position={8} key={8} />
-                    <Column post={posts}  position={9} key={9} />
+                    <Column post={posts}  position={9} key={9} /> */}
 
                 </Stack>
 

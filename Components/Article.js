@@ -2,11 +2,12 @@ import React from 'react';
 import {Box, Flex, Heading, Text} from "@chakra-ui/react";
 import {TimeIcon} from "@chakra-ui/icons";
 import Moment from "react-moment";
-import {RichText} from "../sanity";
-
-
+import {RichText,toPlainText} from "../sanity";
+import {useRouter} from 'next/router';
+import {FacebookIcon, FacebookShareButton,WhatsappShareButton,WhatsappIcon ,EmailShareButton, EmailIcon, LinkedinIcon, TwitterIcon} from "react-share";
 
 function Article({data}) {
+    const router = useRouter()
     return (
 
 
@@ -28,6 +29,19 @@ function Article({data}) {
                     </Flex>
 
                     <RichText data={data?.post?.body} />
+                   <Flex>
+                        
+                                  <FacebookShareButton url={`https://www.truenorth-educationcareerhub.eu${router.route}`} quote={data?.post?.title}>
+                                  <FacebookIcon size={32} round={false} />
+                                  </FacebookShareButton>
+                                 
+                                  <EmailShareButton subject={data?.post?.title} body={toPlainText(data?.post?.body)} >
+                                      <EmailIcon size={32} round={false} />
+                                  </EmailShareButton>
+                                  <WhatsappShareButton title={data?.post?.title} >
+                                      <WhatsappIcon size={32} round={false} />
+                                  </WhatsappShareButton>
+                   </Flex>
                 </Flex>
 
 
