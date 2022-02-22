@@ -142,8 +142,8 @@ const NavigationBar = ({ nav }) => {
                                         children={<SearchIcon color='#1e9339' />}
                                     />
                                     <Input w={`auto`} onChange={(e) => setText(e.target.value)} color={`#444444`} type='text'
-                                        bgColor={`#ffffff`} border={`solid`} borderColor={`#BC1F28`}
-                                        borderWidth={`1px`} />
+                                        bgColor={`#ffffff`} 
+                                        />
                                 </InputGroup>
 
                             </form>
