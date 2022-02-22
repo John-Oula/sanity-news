@@ -66,8 +66,11 @@ const NavigationBar = ({ nav }) => {
                                                             <Menu >
                                                                 {({ isOpen }) => (
                                                                 <>
-                                                                <MenuButton _hover={{ bg: "#ffd24a",color: '#000000' }} key={each?._id + index.toString()} fontSize={`sm`}
+                                                                <MenuButton
+                                                                //  _hover={{ bg: "#ffd24a",color: '#000000' }} 
+                                                                 key={each?._id + index.toString()} fontSize={`sm`}
                                                                             borderRadius={`0px`} borderColor={`#1e9339`}
+                                                                            
                                                                             w={`fit-content`}
                                                                             isActive={isOpen}
                                                                             
