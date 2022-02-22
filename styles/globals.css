@@ -36,7 +36,9 @@ a:hover {
   margin-bottom: 18px !important  ;
 
 }
-
+.carousel-root{
+  width: 100% !important;
+}
 .article img{
   float: right;
 }

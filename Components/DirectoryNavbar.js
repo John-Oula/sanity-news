@@ -6,6 +6,7 @@ import {useContext, useState} from "react";
 import {Nav, Navbar} from "react-bootstrap";
 import SearchContext from "../contexts/SearchContext";
 import {client} from "../sanity";
+import { AiFillAccountBook, AiFillDatabase, AiFillPlusCircle } from 'react-icons/ai';
 
 
 const DirectoryNavbar = () => {
@@ -59,11 +60,19 @@ const DirectoryNavbar = () => {
 
 
                                     <Flex p={2} flexGrow={1} cursor={`pointer`} fontSize={`sm`} borderRadius={`0px`}>
-                                        <Text><Link href={`/`}>Companies & Organisations</Link></Text>
+                                    <Flex alignItems={`center`}>
+                                                            <AiFillDatabase/>
+                                                                         <Text><Link href={`/`}>Companies & Organisations</Link></Text>
+                                                                    </Flex>
+                                       
                                     </Flex>
-                                    <Flex p={2} flexGrow={1} cursor={`pointer`} fontSize={`sm`} borderRadius={`0px`}>
-                                        <Text><Link href={`/registration/companies-form`}>Add entry</Link></Text>
+                                    <Flex alignItems={`center`}>
+                                                            <AiFillPlusCircle/>
+                                                            <Text><Link href={`/registration/companies-form`}>Add entry</Link></Text>
+                                                                    
+                                       
                                     </Flex>
+                                
                                     <Spacer/>
                                     <Flex textAlign={`flex-end`} p={2} flexGrow={1}>
                                         <form onSubmit={handleSearch}>

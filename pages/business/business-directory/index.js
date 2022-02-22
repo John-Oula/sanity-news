@@ -12,6 +12,7 @@ import {
     MenuList,
     SimpleGrid,
     Spinner,
+    Spacer,
     Text
 } from "@chakra-ui/react";
 
