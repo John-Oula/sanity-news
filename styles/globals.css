@@ -33,7 +33,7 @@ a:hover {
 }
 
 .article p{
-  margin-bottom: 24px !important  ;
+  margin-bottom: 18px !important  ;
 
 }
 blockquote {
@@ -42,8 +42,10 @@ blockquote {
 }
 ol,
 ul {
+
   margin: 1.2em !important ;
-  list-style: none !important ;
+ 
+  list-style: square !important ;
 }
 
 .article p{

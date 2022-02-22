@@ -23,7 +23,7 @@ function Article({data}) {
                         <TimeIcon mr={3}/>
                         <Moment format="D MMM YYYY" >
 
-                            <Text fontSize={`sm`} color={`gray.300`}> { data?.post?._updatedAt}</Text>
+                            <Text fontSize={`sm`} color={`gray.300`}>Last Updated { data?.post?._updatedAt}</Text>
                         </Moment>
 
                     </Flex>

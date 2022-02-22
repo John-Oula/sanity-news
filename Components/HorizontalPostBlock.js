@@ -45,7 +45,7 @@ function HorizontalPostBlock({post,title , heading_slug,previewFull}) {
                                                                                     <RichText data={one?.body} />
                                                                                     :
                                                                                     <>
-                                                                                        {toPlainText(one?.body).substring(0,100)}...  Read more >
+                                                                                        {toPlainText(one?.body).substring(0,100)}...  Read more 
 
 
                                                                                     </>
