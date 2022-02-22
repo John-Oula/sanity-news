@@ -132,9 +132,9 @@ function Layout({ children }) {
                                 }
                             }
                             listClassName={`list`}
-                            transformLabel={(title) => '|' + "   " + title}
-                            omitIndexList={[0, 1]}
-                            omitRootLabel
+                            transformLabel={(title) =>  title + "  " + '>' }
+                            omitIndexList={[0,4]}
+                            
                             // useDefaultStyle={true}
                             replaceCharacterList={[{ from: '.', to: ' ' }, { from: '-', to: ' ' },]} />
                     </Container>

@@ -5,6 +5,8 @@ import React from 'react'
 import InlineVideo from "./Components/InlineVideo";
 import imageUrlBuilder from '@sanity/image-url'
 import Team from "./Components/Team";
+import MediaContainer from "./Components/MediaContainer";
+
 import Link from "next/link";
 import PortableText  from '@sanity/block-content-to-react'
 const sanityClient = require('@sanity/client')
@@ -51,6 +53,11 @@ const serializers = {
 
 
             return (<InlineVideo url={node}/>)
+        },
+        image: ({node}) => {
+
+
+            return (<MediaContainer url={node}/>)
         },
         forms: ({node}) => {
             return (<Forms data={node}/>)

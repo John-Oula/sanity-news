@@ -36,12 +36,25 @@ a:hover {
   margin-bottom: 18px !important  ;
 
 }
+
+.article img{
+  float: right;
+}
 blockquote {
   font-family: monospace !important ;
   margin: 2em !important ;
 }
-ol,
-ul {
+.public-DraftStyleDefault-block{
+  height: 163pt;
+  background: rgb(240, 240, 240);
+}
+.list li{
+  margin-top: 1em ;
+  list-style: none !important ;
+  margin-right: 0.5em;
+}
+.article ol,
+.article ul {
 
   margin: 1.2em !important ;
  

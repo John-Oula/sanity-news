@@ -10,8 +10,9 @@ import {client} from "../sanity";
 import {useForm} from "react-hook-form";
 import {useRouter} from "next/router";
 import blockTools from '@sanity/block-tools'
-import Schema from '@sanity/schema'
-import blockContent from '../sanity/schema/block'
+import { CountryDropdown } from 'react-country-region-selector';
+import Schema from '@sanity/schema';
+import blockContent from '../sanity/schema/block';
 const Editor = dynamic(
     () => import('react-draft-wysiwyg').then(mod => mod.Editor),
     { ssr: false })
@@ -20,6 +21,8 @@ function Forms({data}) {
     const router = useRouter()
     const {handleSubmit, register} = useForm();
     const [loading, setLoading] = useState();
+    const [selectCountry, setSelectCountry] = useState();
+  
     const [editor, setEditor] = useState(EditorState.createEmpty());
 
     const { value, getCheckboxProps } = useCheckboxGroup()
@@ -229,7 +232,7 @@ function Forms({data}) {
             const blocks = blockTools.htmlToBlocks(html, blockContentType)
 
 
-            const formData = Object.assign(values,{"body":blocks})
+            const formData = Object.assign(values,{"body":blocks,"country":selectCountry})
             console.log(formData)
 
             const logo = formData.logo[0]
@@ -307,7 +310,7 @@ function Forms({data}) {
     return (
         <Flex flexDirection={`column`}>
 
-            <FormControl>
+            <FormControl isRequired>
                 {
                     data?.fields?.map((each, index) => {
                         return (
@@ -338,10 +341,12 @@ function Forms({data}) {
 
                                             :
                                             each?.fieldType === 'file' ?
-                                                <InputGroup>
+                                            <FormControl isRequired>
+                                                
 
                                                     <Input  {...register(each?.slug?.current)} type={`file`}/>
-                                                </InputGroup>
+                                                
+                                                </FormControl>
                                                 :
                                                 each?.fieldType === 'checkbox' ?
                                                     <>
@@ -373,6 +378,18 @@ function Forms({data}) {
 
 
                                                     </>
+                                                        :
+                                                    each?.fieldType === 'country' ?
+                                                    <>
+
+
+<CountryDropdown  
+          value={selectCountry}
+          onChange={(val) => setSelectCountry(val)} />
+
+
+
+                                                    </>
                                                     :
                                                     <></>
                                 }
@@ -384,7 +401,7 @@ function Forms({data}) {
 
             </FormControl>
 
-            <Button colorScheme={`green`} isLoading={loading} value={`submit`} type={`submit`}
+            <Button mt={5} mb={5} colorScheme={`green`} isLoading={loading} value={`submit`} type={`submit`}
                     onClick={handleSubmit(onSubmit)}> Submit </Button>
 
 
