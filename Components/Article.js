@@ -38,7 +38,7 @@ function Article({data}) {
                                   <EmailShareButton subject={data?.post?.title} body={toPlainText(data?.post?.body)} >
                                       <EmailIcon size={32} round={false} />
                                   </EmailShareButton>
-                                  <WhatsappShareButton title={data?.post?.title} >
+                                  <WhatsappShareButton url={`https://www.truenorth-educationcareerhub.eu${router.route}`} title={data?.post?.title} >
                                       <WhatsappIcon size={32} round={false} />
                                   </WhatsappShareButton>
                    </Flex>
