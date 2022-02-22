@@ -39,6 +39,13 @@ a:hover {
 .carousel-root{
   width: 100% !important;
 }
+.article .css-j7qwjs {
+  float: left;
+  margin-right: 3em;
+}
+
+
+
 .article img{
   float: right;
 }

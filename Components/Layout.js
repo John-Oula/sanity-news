@@ -89,7 +89,7 @@ function Layout({ children }) {
                     <Box w={`100%`} h={`90`} overflow={`hidden`} bgColor={`#ffffff`}>
                         <Container maxW='container.xl' >
                             <Flex  p={2} borderBottomLeftRadius={5} borderBottomRightRadius={5} bgColor={`#ffd24a`}  position={`absolute`} right={`120px`}>
-                                <Link mr={3} href='/contact' color={`#00000`}>Contact</Link>
+                                <Link  display={['none','none','flex','flex','flex']} mr={3} href='/contact' color={`#00000`}>Contact</Link>
                                 <LinkBox as='button'  >
                                     <LinkOverlay isExternal href='https://www.facebook.com/TrueNorth034'>
                                     <SocialIcon  fgColor='#000000' bgColor='#ffd24a' style={{ height: 30, width: 30 , borderRadius: '0px'}} network='facebook' />
