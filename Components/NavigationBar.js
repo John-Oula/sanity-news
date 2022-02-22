@@ -94,7 +94,7 @@ const NavigationBar = ({ nav }) => {
                                                                         each?.menu_submenu && each?.menu_submenu.map(link => (
                                                                             <MenuItem  _hover={{ bg: "#ffd24a",color: '#000000' }}
                                                                             _focus={{ bg: "#ffd24a",color: '#000000' }}
-                                                                            color={`#ffffff`}
+                                                                            color={[null,null,`#ffffff`,`#ffffff`,`#ffffff`]}
                                                                             onClick={() => history.push(`/${each?.slug?.current}/${link?.slug?.current}`)}
                                                                                 key={link?._id}><Link
                                                                                 href={`/${each?.slug?.current}/${link?.slug?.current}`}>{link?.title}</Link></MenuItem>))
