@@ -14,10 +14,10 @@ function PostCard({post,position}) {
                     if (each?.position === position){
 
                         return(
-                            <Box h={`70%`} w={["100%","100%","fit-content%","100%","100%"]} key={each?.posts[0]._id } borderWidth='1px'>
-                                <Box overflow={`hidden`} h={`inherit`} w={`100%`}>
-                                    <Image src={urlFor(each?.posts[0]?.image).url()} width={`auto`} h={`auto`} fallbackSrc={`https://via.placeholder.com/200`} />
-                                </Box>
+                            <Box h={`fit-content`} borderColor={`#d6d9dc`} borderWidth={[`0px`,0,`1px`,`1px`,`1px`]}  w={["100%","100%","fit-content","fit-content","fit-content"]} key={each?.posts[0]._id }>
+                               
+                                    <Image boxSize='30em' objectFit='cover' src={urlFor(each?.posts[0]?.image).url()}fallbackSrc={`https://via.placeholder.com/200`} />
+                               
 
                                 <Box bgColor={`white`}>
                                     <Box fontWeight='semibold' as='h3' lineHeight='tight'  bgColor={`#287b4f`} color={`white`} p={5}>

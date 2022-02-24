@@ -1,20 +1,21 @@
-import {Box, Container, Flex, Stack} from "@chakra-ui/react";
+import {Box, Container, Flex, Stack, Image} from "@chakra-ui/react";
 import Slider from "../Components/Slider";
 import Column from "../Components/Column";
 import React from "react";
 
-import {client} from "../sanity";
+import {client, urlFor} from "../sanity";
 import NestedLayout from "../Components/NestedLayout";
 import PostCard from "../Components/PostCard";
 import HorizontalCard from "../Components/HorizontalCard";
 
-export default function Home({ posts, carousel}) {
+export default function Home({ posts, carousel, hero}) {
 
 
 
     return (
 
-        <Container maxW='container.xl' centerContent>
+<>
+<Container maxW='container.xl' centerContent>
             <Flex flexDirection={`column` } w={["100%","100%","100%","100%"]} >
                 <Box w={`100%`} mb={`3%`} display={["none","flex","flex","box","box"]}>
                     <Slider images={carousel} />
@@ -46,8 +47,14 @@ export default function Home({ posts, carousel}) {
 
 
             </Flex>
+            
         </Container>
+        <Box display={['none','none','block','block','block']} mt={`3em`} mb={`3em`} overflow={`hidden`} h={`350pt`} w={`100%`}>
+        <Image fallbackSrc={`https://via.placeholder.com/200`} src={urlFor(hero[0]?.image)?.url()} w={`100%`} h={`auto`} />
+        </Box>
 
+
+</>
 
     )
 }
@@ -66,6 +73,7 @@ export async function getServerSideProps() {
                         "category_slug":category->slug
                        }}`)
     const carousel = await client.fetch(`*[_type == "imageSlider"]`)
+    const hero = await client.fetch(`*[_type == "hero"]`)
     if (!posts.length) {
         return {
             props: {
@@ -78,6 +86,7 @@ export async function getServerSideProps() {
 
                 posts: posts,
                 carousel: carousel,
+                hero: hero
 
             }
         }

@@ -41,13 +41,37 @@ export default function BusinessDirectory({posts}) {
     const [selectCategory,setSelectCategory] = useState(null)
 
 
+
+    const handleFilterSearch = async () =>{
+      const filter = {
+        country:country[0],
+        city:city[0],
+        category:category[0]
+      }
+      console.log(filter)
+      const query = `*[_type == "company" && country =="${ filter.country}" && city =="${ filter.city}" && category =="${ filter.category}"]`
+      console.log(query)
+      
+    const filteredSearch = await client.fetch(query)
+    .then(res =>{
+      console.log(res)
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+
+
+    }
     useEffect(() =>{
       posts?.directory?.filter(each =>{
         if(each.category != undefined && each.category )
           categoryList.push( each.category)
-       if(each.country != undefined && each.country )
+
+        if(each.country != undefined && each.country )
           countryList.push( each.country)   
 
+        if(each.city != undefined && each.city )
+          cityList.push( each.city)
 
 
       })
@@ -73,27 +97,27 @@ export default function BusinessDirectory({posts}) {
             <Flex mb={10} w={`100%`} flexDirection={[`column`,`column`,`row`,`row`,`row`,]}>
                 <Flex w={[`100%`,`100%`,`100%`,`100%`,`100%`,]}>
 
-                    <Box border={`solid`} w={`100%`}  borderWidth={`1px`} borderColor={` #d6d9dc`} flexDirection={`column`} >
-                        <Flex border={`solid`}  borderWidth={`1px`} borderColor={` #d6d9dc`} flexDirection={`column`} >
-                            <Box border={`solid`} p={3} borderWidth={`1px`} borderColor={` #d6d9dc`} flexDirection={`column`} >
+                    <Box  w={`100%`}   flexDirection={`column`} >
+                        <Flex  flexDirection={`column`} >
+                            <Box  p={3} flexDirection={`column`} >
                                 <Heading color={`#287b4f`} mb={3} size={`md`} as={`h5`}>{posts?.post?.title}</Heading>
-                                <Flex mt={`5pt`} mb={`5pt`} alignItems={`center`}>
+                                {/* <Flex mt={`5pt`} mb={`5pt`} alignItems={`center`}>
                                     <TimeIcon mr={3}/>
                                     <Moment format="D MMM YYYY" >
 
                                         <Text fontSize={`sm`}> { posts?.post?._updatedAt}</Text>
                                     </Moment>
 
-                                </Flex>
+                                </Flex> */}
 
                                 <RichText posts={posts?.post?.body} />
                                 <DirectoryNavbar  />
-          <Flex>
+          <Flex alignItems={`center`}>
           <Flex alignItems={`center`}>
           <Menu>
   {({ isOpen }) => (
     <>
-      <MenuButton isActive={isOpen} as={Button}  m={2} rightIcon={<ChevronDownIcon />}>
+      <MenuButton bgColor={`transparent`} color={`gray.500`} isActive={isOpen} as={Button}  m={2} rightIcon={<ChevronDownIcon />}>
         Entries
       </MenuButton>
       <MenuList>
@@ -105,12 +129,12 @@ export default function BusinessDirectory({posts}) {
     </>
   )}
 </Menu>
-</Flex>
+
 <Flex alignItems={`center`}>
 <Menu>
   {({ isOpen }) => (
     <>
-      <MenuButton isActive={isOpen} as={Button}  m={2} rightIcon={ <ChevronDownIcon />}>
+      <MenuButton bgColor={`transparent`} color={`gray.500`}  isActive={isOpen} as={Button}  m={2} rightIcon={ <ChevronDownIcon />}>
       {selectCountry ? selectCountry : 'Country'}
       </MenuButton>
       <MenuList>
@@ -134,7 +158,7 @@ export default function BusinessDirectory({posts}) {
 
   {({ isOpen }) => (
     <>
-      <MenuButton isActive={isOpen} as={Button}  m={2} rightIcon={<ChevronDownIcon />}>
+      <MenuButton bgColor={`transparent`} color={`gray.500`} isActive={isOpen} as={Button}  m={2} rightIcon={<ChevronDownIcon />}>
       {selectCity ? selectCity : 'City'}
       </MenuButton>
      
@@ -157,7 +181,7 @@ export default function BusinessDirectory({posts}) {
 <Menu >
   {({ isOpen }) => (
     <>
-      <MenuButton mr={`0.5em`} isActive={isOpen} as={Button}  m={2} rightIcon={ <ChevronDownIcon />}>
+      <MenuButton isTruncated bgColor={`transparent`} color={`gray.500`} mr={`0.5em`} isActive={isOpen} as={Button}  m={2} rightIcon={ <ChevronDownIcon />}>
         {selectCategory ? selectCategory : 'Category'}
         
       </MenuButton>
@@ -176,6 +200,9 @@ export default function BusinessDirectory({posts}) {
 </Menu>
 {selectCategory && <AiOutlineClose cursor={`pointer`} onClick={() => setSelectCategory(null)} />}
 </Flex>
+
+<Button onClick={handleFilterSearch} bgColor={`#1e9339`} color={`white`}>Apply</Button>
+</Flex>
               </Flex>
                                 <CircleFilter state={true} data={posts}/>
 
@@ -185,7 +212,7 @@ export default function BusinessDirectory({posts}) {
 
                                 </Center>
                                 <Menu>
-                                    <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                                    <MenuButton bgColor={`transparent`} color={`gray.500`} as={Button} rightIcon={<ChevronDownIcon />}>
                                         Select Sorting Order
                                     </MenuButton>
                                     <MenuList>
