@@ -15,8 +15,9 @@ import {
     Spacer,
     Text
 } from "@chakra-ui/react";
+import { AiOutlineClose } from 'react-icons/ai';
 
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useEffect,  useState} from "react";
 import NestedLayout from "../../../Components/NestedLayout";
 import DirectoryNavbar from "../../../Components/DirectoryNavbar";
 import {ChevronDownIcon, TimeIcon} from "@chakra-ui/icons";
@@ -28,8 +29,38 @@ import CircleFilter from "../../../Components/CircleFilter";
 
 export default function BusinessDirectory({posts}) {
     const {searchResults, setSearchResults, searching, message,setMessage} = useContext(SearchContext)
+    const [country,setCountry] = useState([])
+    let countryList = []
+    const [city,setCity] = useState([])
+    let cityList = []
+    const [category,setCategory] = useState([])
+    let categoryList = []
+
+    const [selectCountry,setSelectCountry] = useState(null)
+    const [selectCity,setSelectCity] = useState(null)
+    const [selectCategory,setSelectCategory] = useState(null)
+
 
     useEffect(() =>{
+      posts?.directory?.filter(each =>{
+        if(each.category != undefined && each.category )
+          categoryList.push( each.category)
+       if(each.country != undefined && each.country )
+          countryList.push( each.country)   
+
+
+
+      })
+      console.log(Array.from(new Set(countryList)))
+
+      const filteredCategory = Array.from(new Set(categoryList))
+      const filteredCountry = Array.from(new Set(countryList))
+      const filteredCity = Array.from(new Set(cityList))
+
+      setCategory(filteredCategory)
+      setCountry(filteredCountry)
+      setCity(filteredCity)
+
         return () => {
             setSearchResults([])
             setMessage('')
@@ -57,7 +88,8 @@ export default function BusinessDirectory({posts}) {
 
                                 <RichText posts={posts?.post?.body} />
                                 <DirectoryNavbar  />
-          {/* <Flex>
+          <Flex>
+          <Flex alignItems={`center`}>
           <Menu>
   {({ isOpen }) => (
     <>
@@ -73,46 +105,78 @@ export default function BusinessDirectory({posts}) {
     </>
   )}
 </Menu>
+</Flex>
+<Flex alignItems={`center`}>
 <Menu>
   {({ isOpen }) => (
     <>
-      <MenuButton isActive={isOpen} as={Button}  m={2} rightIcon={<ChevronDownIcon />}>
-        Country
+      <MenuButton isActive={isOpen} as={Button}  m={2} rightIcon={ <ChevronDownIcon />}>
+      {selectCountry ? selectCountry : 'Country'}
       </MenuButton>
       <MenuList>
-        <MenuItem></MenuItem>
+        {
+          country?.map(each =>{
+            return(
+              <MenuItem onClick={() =>setSelectCountry(each)}>{each}</MenuItem>
+            )
+          })
+        }
         
       </MenuList>
     </>
   )}
 </Menu>
+{selectCountry && <AiOutlineClose cursor={`pointer`} onClick={() => setSelectCountry(null)} /> }
+</Flex>
+<Flex alignItems={`center`}>
+
 <Menu>
+
   {({ isOpen }) => (
     <>
       <MenuButton isActive={isOpen} as={Button}  m={2} rightIcon={<ChevronDownIcon />}>
-        City
+      {selectCity ? selectCity : 'City'}
       </MenuButton>
+     
       <MenuList>
-        <MenuItem></MenuItem>
+      {
+          city?.map(each =>{
+            return(
+              <MenuItem onClick={() =>setSelectCity(each)}>{each}</MenuItem>
+            )
+          })
+        }
         
       </MenuList>
     </>
   )}
 </Menu>
+{ selectCity && <AiOutlineClose cursor={`pointer`} onClick={() => setSelectCity(null)} /> }
+</Flex>
+<Flex alignItems={`center`}>
 <Menu >
   {({ isOpen }) => (
     <>
-      <MenuButton isActive={isOpen} as={Button}  m={2} rightIcon={<ChevronDownIcon />}>
-        Category
+      <MenuButton mr={`0.5em`} isActive={isOpen} as={Button}  m={2} rightIcon={ <ChevronDownIcon />}>
+        {selectCategory ? selectCategory : 'Category'}
+        
       </MenuButton>
       <MenuList>
-        <MenuItem></MenuItem>
+      {
+          category?.map(each =>{
+            return(
+              <MenuItem onClick={() =>setSelectCategory(each)}>{each}</MenuItem>
+            )
+          })
+        }
         
       </MenuList>
     </>
   )}
 </Menu>
-              </Flex> */}
+{selectCategory && <AiOutlineClose cursor={`pointer`} onClick={() => setSelectCategory(null)} />}
+</Flex>
+              </Flex>
                                 <CircleFilter state={true} data={posts}/>
 
                                 <Center mt={10}  >
