@@ -67,7 +67,7 @@ const NavigationBar = ({ nav }) => {
                                                                 {({ isOpen }) => (
                                                                 <>
                                                                 <MenuButton
-                                                                //  _hover={{ bg: "#ffd24a",color: '#000000' }} 
+                                                                //  _hover={{ bg: "#ffdb58",color: '#000000' }} 
                                                                  key={each?._id + index.toString()} fontSize={`sm`}
                                                                             borderRadius={`0px`} borderColor={`#1e9339`}
                                                                             
@@ -95,8 +95,8 @@ const NavigationBar = ({ nav }) => {
 
                                                                     {
                                                                         each?.menu_submenu && each?.menu_submenu.map(link => (
-                                                                            <MenuItem  _hover={{ bg: "#ffd24a",color: '#000000' }}
-                                                                            _focus={{ bg: "#ffd24a",color: '#000000' }}
+                                                                            <MenuItem  _hover={{ bg: "#ffdb58",color: '#000000' }}
+                                                                            _focus={{ bg: "#ffdb58",color: '#000000' }}
                                                                             color={[null,null,`#ffffff`,`#ffffff`,`#ffffff`]}
                                                                             onClick={() => history.push(`/${each?.slug?.current}/${link?.slug?.current}`)}
                                                                                 key={link?._id}><Link

@@ -49,7 +49,7 @@ function Column({position,post}) {
                                               <Box position={`relative`}>
                                               {
                                                   one?.imagePreview ?
-                                                  <Heading p={3} as={`h1`} size={`md`} casing={ `capitalize`}  color={ `#ffffff`} position={`absolute`} bgColor={ `#1e9339c7`}  top={`40%`} w={`50%`} ><Link isExternal  href={ one?.link ? one?.externalLink : `/post/${one.slug?.current}`}
+                                                  <Heading p={3} as={`h1`} size={`md`} casing={ `capitalize`}  color={ `#ffffff`} position={`absolute`} bgColor={ `#d9633f`}  top={`40%`} w={`50%`} ><Link isExternal  href={ one?.link ? one?.externalLink : `/post/${one.slug?.current}`}
                                                   passHref>{one?.title}</Link></Heading>
 
                                                   :

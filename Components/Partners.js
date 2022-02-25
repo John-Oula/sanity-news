@@ -8,7 +8,7 @@ function Partners({data}) {
 
     return (
         <Box width={`100%`}>
-            <Box width={`inherit`} bg={`#ffd24a`} p={4}>
+            <Box width={`inherit`} bg={`#ffdb58`} p={4}>
                 <Center>
                     <Heading as={`h6`} size={`sm`}>
                         Our Partners & Network

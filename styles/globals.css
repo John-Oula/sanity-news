@@ -47,16 +47,15 @@ a:hover {
   margin-right: 3em;
 }
 #nprogress .bar{
-  background-color: #ffd24a !important ;
+  background-color: #ffdb58 !important ;
 }
 #nprogress .peg {
-  box-shadow: 0 0 10px #ffd24a, 0 0 5px #ffd24a;
+  box-shadow: 0 0 10px #ffdb58, 0 0 5px #ffdb58;
 }
 
 nav{
   padding:0pt;
 }
-
 
 
 .article img{

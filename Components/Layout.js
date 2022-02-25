@@ -88,17 +88,17 @@ function Layout({ children }) {
 
                     <Box w={`100%`} h={`90`} overflow={`hidden`} bgColor={`#ffffff`}>
                         <Container maxW='container.xl' >
-                            <Flex  p={2} borderBottomLeftRadius={5} borderBottomRightRadius={5} bgColor={`#ffd24a`}  position={`absolute`} right={`120px`}>
+                            <Flex  p={2} borderBottomLeftRadius={5} borderBottomRightRadius={5} bgColor={`#ffdb58`}  position={`absolute`} right={`120px`}>
                                 <Link  display={['none','none','flex','flex','flex']} mr={3} href='/contact' color={`#00000`}>Contact</Link>
                                 <LinkBox as='button'  >
                                     <LinkOverlay isExternal href='https://www.facebook.com/TrueNorth034'>
-                                    <SocialIcon  fgColor='#000000' bgColor='#ffd24a' style={{ height: 30, width: 30 , borderRadius: '0px'}} network='facebook' />
+                                    <SocialIcon  fgColor='#000000' bgColor='#ffdb58' style={{ height: 30, width: 30 , borderRadius: '0px'}} network='facebook' />
                                     </LinkOverlay>
                                     <LinkOverlay isExternal href={`https://www.youtube.com/channel/UCjOH2QfkXLT23StERjI9Yxg`}>
-                                    <SocialIcon fgColor='#000000' bgColor='#ffd24a' style={{ height: 30, width: 30 , borderRadius: '0px'}}  network='youtube' />
+                                    <SocialIcon fgColor='#000000' bgColor='#ffdb58' style={{ height: 30, width: 30 , borderRadius: '0px'}}  network='youtube' />
                                     </LinkOverlay>
                                     <LinkOverlay isExternal href={`https://www.instagram.com/truenorth034/`}>
-                                    <SocialIcon fgColor='#000000' bgColor='#ffd24a' style={{ height: 30, width: 30 , borderRadius: '0px'}}  network='instagram' />
+                                    <SocialIcon fgColor='#000000' bgColor='#ffdb58' style={{ height: 30, width: 30 , borderRadius: '0px'}}  network='instagram' />
                                     </LinkOverlay>
                                     
                                 </LinkBox>

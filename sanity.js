@@ -1,3 +1,4 @@
+const sanityClient = require('@sanity/client')
 import Forms from "./Components/Forms";
 import getYouTubeId from 'get-youtube-id'
 import YouTube from 'react-youtube'
@@ -7,10 +8,10 @@ import imageUrlBuilder from '@sanity/image-url'
 import Team from "./Components/Team";
 import MediaContainer from "./Components/MediaContainer";
 
-import Link from "next/link";
-import PortableText  from '@sanity/block-content-to-react'
-const sanityClient = require('@sanity/client')
-import {Box, Flex,LinkOverlay, Heading,Spacer, Circle, Text, Button, LinkBox} from "@chakra-ui/react";
+import {BsFillArrowRightCircleFill} from 'react-icons/bs'
+import PortableText  from  '@sanity/block-content-to-react'
+
+import { Flex,Wrap,WrapItem,LinkOverlay,Link, Heading,Spacer, Circle, Text, Button, LinkBox} from "@chakra-ui/react";
 
 const config = {
     projectId: 'y90icmhk',
@@ -40,7 +41,35 @@ export function toPlainText(blocks = []) {
 
 const serializers = {
 
+
+
+
     types: {
+        block(props) {
+            switch (props.node.style) {
+              case "h1":
+                return <Flex bgColor={`#ffdb58`} pl={5} mt={5} mb={5} alignItems={`center`}><Heading as={`h1`} mr={5} >{props.children}</Heading><BsFillArrowRightCircleFill color="#000000" size={20}  /> </Flex>
+      
+              case "h2":
+                return <h2 className="">{props.children}</h2>
+      
+              case "h3":
+                return <h3 className="">{props.children}</h3>
+      
+              case "h4":
+                return <h4 className="">{props.children}</h4>
+              
+      
+              case "blockquote":
+                return <blockquote className="">{props.children}</blockquote>
+              
+              case "normal":
+                return  <p className="is-family-secondary is-size-5">{props.children}</p>
+              
+              default:
+                return <p className="is-family-secondary">{props.children}</p>
+            }
+          },
         youtube: ({node}) => {
             const { url } = node
             const id = getYouTubeId(url)
@@ -66,18 +95,35 @@ const serializers = {
             return (<Team data={node}/>)
         },
 
+
         code: (props) => (
             <pre data-language={props.node.language}>
         <code>{props.node.code}</code>
       </pre>
         ),
     },
+    // list: (props) => {
+    //     const { type } = props;
+    //     const bullet = type === 'bullet';
+    //     if (bullet) {
+    //       return <ul>{props.children}</ul>;
+    //     }
+    //     return <ol>{props.children}</ol>;
+    //   },
+    listItem: (props) => <Flex alignItems={`center`}><BsFillArrowRightCircleFill color="#1e9339" size={20}  />
+    <Wrap spacing={0} w={`90%`}>
+        <WrapItem>
+        <Text  as={`list`} fontSize={`md`} ml={4}>{props.children}</Text>
+        </WrapItem>
+    </Wrap>
+    </Flex>,
     marks: {
         // internalLink: ({mark, children}) => {
         //     const {slug = {}} = mark
         //     const href = `/${slug.current}`
         //     return <a href={href}>{children}</a>
         // },
+
         link: ({mark, children}) => {
             // Read https://css-tricks.com/use-target_blank/
             const { blank, href } = mark
@@ -87,17 +133,23 @@ const serializers = {
                 <LinkBox  w={`100%`} >
                                     <LinkOverlay isExternal href={href}>
                                     <Flex overflow={`break-word`} w={`auto`} isTruncated alignItems={`center`} p={5} boxShadow={`lg`} borderRadius={`10px`}>
-                    <Circle bgGradient='linear(to-l, #1e9339, #ffd24a)' size={`24px`} m={2} ></Circle>
+                    <Circle bgGradient='linear(to-l, #1e9339, #ffdb58)' size={`24px`} m={2} ></Circle>
                     <Text color={`#1e9339`}>{children}</Text>
                         {/*<ExternalLinkIcon mx='2px' />*/}
                     <Spacer />
-                    <Button colorScheme={`green`}
+                    <Button colorScheme={`#ffdb58`}
                           > Visit </Button>
 
 
                 </Flex>
                                     </LinkOverlay>
                                     </LinkBox>
+                
+        },
+        inlineUrl: ({mark, children}) => {
+            // Read https://css-tricks.com/use-target_blank/
+            const { blank, href } = mark
+            return <Link color={`#1e9339`} isExternal href={href}>{children}</Link>
                 
         },
 

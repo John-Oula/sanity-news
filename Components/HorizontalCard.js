@@ -27,7 +27,7 @@ function HorizontalCard({post,position}) {
 
     return (
         <Flex flexDirection={`column`} mb={5} width={`100%`} overflowWrap={`break-word`}>
-            <Flex mb={5} width={`inherit`} bg={`#ffd24a`} p={3} alignItems={`center`}>
+            <Flex mb={5} width={`inherit`} bg={`#ffdb58`} p={3} alignItems={`center`}>
 
                 <Heading as={`h3`} size={`md`}>{ cardTitle }</Heading>
                 <ArrowForwardIcon/>
