@@ -44,12 +44,14 @@ export default function BusinessDirectory({posts}) {
 
     const handleFilterSearch = async () =>{
       const filter = {
-        country:country[0],
-        city:city[0],
-        category:category[0]
+        country:selectCountry,
+        city:selectCity,
+        category:selectCategory
       }
       console.log(filter)
-      const query = `*[_type == "company" && country =="${ filter.country}" && city =="${ filter.city}" && category =="${ filter.category}"]`
+      const countryQuery = `${filter.country} match country`
+      const cityQuery = `${filter.city} match city`
+      const categoryQuery = `${filter.category} match category`
       console.log(query)
       
     const filteredSearch = await client.fetch(query)
@@ -139,9 +141,9 @@ export default function BusinessDirectory({posts}) {
       </MenuButton>
       <MenuList>
         {
-          country?.map(each =>{
+          country?.map((each,index) =>{
             return(
-              <MenuItem onClick={() =>setSelectCountry(each)}>{each}</MenuItem>
+              <MenuItem key={'country_'+ index} onClick={() =>setSelectCountry(each)}>{each}</MenuItem>
             )
           })
         }
@@ -164,9 +166,9 @@ export default function BusinessDirectory({posts}) {
      
       <MenuList>
       {
-          city?.map(each =>{
+          city?.map((each,index) =>{
             return(
-              <MenuItem onClick={() =>setSelectCity(each)}>{each}</MenuItem>
+              <MenuItem  key={'city_'+ index} onClick={() =>setSelectCity(each)}>{each}</MenuItem>
             )
           })
         }
@@ -187,9 +189,9 @@ export default function BusinessDirectory({posts}) {
       </MenuButton>
       <MenuList>
       {
-          category?.map(each =>{
+          category?.map((each,index) =>{
             return(
-              <MenuItem onClick={() =>setSelectCategory(each)}>{each}</MenuItem>
+              <MenuItem  key={'category_'+ index} onClick={() =>setSelectCategory(each)}>{each}</MenuItem>
             )
           })
         }

@@ -14,7 +14,7 @@ function Article({data}) {
                 <Flex w={`100%`} mb={10} p={[0,0,15,17,17]}
                       className={`article`}
                       // border={`solid`}
-                      p={3}
+                   
                       // borderWidth={`1px`}
                      // borderColor={` #d6d9dc`}
                       flexDirection={`column`} >

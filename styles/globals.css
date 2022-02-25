@@ -11,6 +11,9 @@ body {
 a {
 
   text-decoration: none !important ;
+  list-style: none !important ;
+  text-decoration-line: none  !important;
+  
 }
 a:hover {
 

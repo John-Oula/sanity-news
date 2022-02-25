@@ -10,7 +10,7 @@ import MediaContainer from "./Components/MediaContainer";
 import Link from "next/link";
 import PortableText  from '@sanity/block-content-to-react'
 const sanityClient = require('@sanity/client')
-import {Box, Flex, Heading,Spacer, Circle, Text, Button} from "@chakra-ui/react";
+import {Box, Flex,LinkOverlay, Heading,Spacer, Circle, Text, Button, LinkBox} from "@chakra-ui/react";
 
 const config = {
     projectId: 'y90icmhk',
@@ -83,17 +83,22 @@ const serializers = {
             const { blank, href } = mark
             return blank ?
                 <a style={{ color:'#1e9339'}} href={href} target="_blank" rel="noopener">{children}</a>
-                : <a style={{ color:'#1e9339', width : `100%`, overflow: `break-word`}} target="_blank" rel="noopener"  href={href}>
-                    <Flex alignItems={`center`} p={5} boxShadow={`lg`} borderRadius={`10px`}>
+                :
+                <LinkBox  w={`100%`} >
+                                    <LinkOverlay isExternal href={href}>
+                                    <Flex overflow={`break-word`} w={`auto`} isTruncated alignItems={`center`} p={5} boxShadow={`lg`} borderRadius={`10px`}>
                     <Circle bgGradient='linear(to-l, #1e9339, #ffd24a)' size={`24px`} m={2} ></Circle>
-                    {children}
+                    <Text color={`#1e9339`}>{children}</Text>
                         {/*<ExternalLinkIcon mx='2px' />*/}
                     <Spacer />
                     <Button colorScheme={`green`}
                           > Visit </Button>
 
 
-                </Flex></a>
+                </Flex>
+                                    </LinkOverlay>
+                                    </LinkBox>
+                
         },
 
     },

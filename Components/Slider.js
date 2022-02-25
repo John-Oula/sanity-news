@@ -15,11 +15,11 @@ function Slider({images}) {
             <Carousel   autoPlay={true}  showThumbs={false}>
                  <Box overflow={`hidden`} h={`400px`} >
                 {
-                    images[0].carousel.map((each) =>{
+                    images[0].carousel.map((each,index) =>{
                         return(
 
                                
-                                   <Image fallbackSrc={`https://via.placeholder.com/200`} src={urlFor(each.image).url()} w={`100%`} h={`auto`} /> 
+                                   <Image  key={'slider_'+ index} fallbackSrc={`https://via.placeholder.com/200`} src={urlFor(each.image).url()} w={`100%`} h={`auto`} /> 
                                 
 
 
