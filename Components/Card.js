@@ -58,7 +58,7 @@ function Card({post}) {
 
                 </Box>
 
-                <Button mt={2} w={`100%`} colorScheme={`#ffdb58`}
+                <Button mt={2} w={`100%`} bgColor={`#ffdb58`}
                         onClick={handleClick}> {extend ? "Less" : "More"} </Button>
             </Box>
         </Box>

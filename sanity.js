@@ -64,7 +64,7 @@ const serializers = {
                 return <blockquote className="">{props.children}</blockquote>
               
               case "normal":
-                return  <p className="is-family-secondary is-size-5">{props.children}</p>
+                return  <Text pl={5} pr={5}>{props.children}</Text>
               
               default:
                 return <p className="is-family-secondary">{props.children}</p>
@@ -137,7 +137,7 @@ const serializers = {
                     <Text color={`#1e9339`}>{children}</Text>
                         {/*<ExternalLinkIcon mx='2px' />*/}
                     <Spacer />
-                    <Button colorScheme={`#ffdb58`}
+                    <Button color={`white`} bgColor={`#1e9339`}
                           > Visit </Button>
 
 
