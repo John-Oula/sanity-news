@@ -43,6 +43,12 @@ a:hover {
   float: left;
   margin-right: 3em;
 }
+#nprogress .bar{
+  background-color: #ffd24a !important ;
+}
+#nprogress .peg {
+  box-shadow: 0 0 10px #ffd24a, 0 0 5px #ffd24a;
+}
 
 nav{
   padding:0pt;
