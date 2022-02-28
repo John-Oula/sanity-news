@@ -25,8 +25,8 @@ function HorizontalPostBlock({post,title , heading_slug,previewFull}) {
                                         {
                                             post?.slice(0,5).map((one) =>(
                                                 <Box key={one._id} >
-                                                    <LinkBox  as='article'>
-                                                        <NextLink  href={one?.link ? one?.externalLink :`/${one?.category_slug?.current}/${router.query.slug || router.route.split('/')[2]}/${one.slug?.current}`} passHref>
+                                                    <LinkBox >
+                                                      
                                                             <LinkOverlay>
                                                                 <Flex flexDirection={[`column`,`column`,`row`,`row`,`row`,]} justifyContent={`center`} alignItems={`center`}>
                                                                     {one?.image && <Box  mr={[0,0,4,4,4]} overflow={`hidden`}  w={[`100%`,`100%`,`40%`,`40%`,`40%`,]} h={[`100%`,`100%`,`40%`,`40%`,`40%`,]}  >
@@ -58,7 +58,7 @@ function HorizontalPostBlock({post,title , heading_slug,previewFull}) {
                                                                 </Flex>
 
                                                             </LinkOverlay>
-                                                        </NextLink>
+                                                       
                                                     </LinkBox>
                                                 </Box>
                                             ))

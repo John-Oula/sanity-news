@@ -126,16 +126,19 @@ const serializers = {
 
         link: ({mark, children}) => {
             // Read https://css-tricks.com/use-target_blank/
-            const { blank, href } = mark
-            return blank ?
-                <a style={{ color:'#1e9339'}} href={href} target="_blank" rel="noopener">{children}</a>
-                :
+            const { href } = mark
+            return( 
                 <LinkBox  w={`100%`} >
-                                    <LinkOverlay isExternal href={href}>
-                                    <Flex overflow={`break-word`} w={`auto`} isTruncated alignItems={`center`} p={5} boxShadow={`lg`} borderRadius={`10px`}>
+                                    <LinkOverlay w={`inherit`} isExternal href={href}>
+                                    <Flex isTruncated overflow={`break-word`} w={`auto`} isTruncated alignItems={`center`} p={5} boxShadow={`sm`} borderRadius={`10px`}>
                     <Circle bgGradient='linear(to-l, #1e9339, #ffdb58)' size={`24px`} m={2} ></Circle>
-                    <Text color={`#1e9339`}>{children}</Text>
+                    <Wrap >
+                        <WrapItem>
+                 
+                    <Text  color={`#1e9339`}>More Information</Text>
                         {/*<ExternalLinkIcon mx='2px' />*/}
+                        </WrapItem>
+                    </Wrap>
                     <Spacer />
                     <Button color={`white`} bgColor={`#1e9339`}
                           > Visit </Button>
@@ -144,7 +147,7 @@ const serializers = {
                 </Flex>
                                     </LinkOverlay>
                                     </LinkBox>
-                
+                )
         },
         inlineUrl: ({mark, children}) => {
             // Read https://css-tricks.com/use-target_blank/
