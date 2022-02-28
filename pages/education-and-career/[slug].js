@@ -57,12 +57,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-    console.log(params)
+  
 
     const {slug} = params;
 
     const post = await client.fetch(postQuery,{slug})
-    console.log({params})
+    console.log(post)
 
 
     return { props :{data :{post}}}

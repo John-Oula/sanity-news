@@ -35,7 +35,7 @@ const NavigationBar = ({ nav }) => {
 
         <Flex
             bgColor={`#1e9339`}
-            w={`100%`} h={`auto`} boxShadow={`lg`}>
+            w={`100%`} h={`auto`} >
 
             <Container maxW={'container.xl'}>
 

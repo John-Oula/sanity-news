@@ -48,18 +48,18 @@ const serializers = {
         block(props) {
             switch (props.node.style) {
               case "h1":
-                return <Flex bgColor={`#ffdb58`} pl={5} mt={5} mb={5} alignItems={`center`}><Heading as={`h1`} mr={5} >{props.children}</Heading>
+                return <Flex className={'table-title'} w={`100%`}   bgColor={`#ffdb58`} pl={5} mt={5} mb={5} alignItems={`center`}><Heading as={`h1`} mr={5} >{props.children}</Heading>
                 
                  </Flex>
       
               case "h2":
-                return <h2 className="">{props.children}</h2>
+                return <Heading as={`h2`} pl={5} pr={5}>{props.children}</Heading>
       
               case "h3":
-                return <h3 className="">{props.children}</h3>
+                return <Heading as={`h3`} pl={5} pr={5}>{props.children}</Heading>
       
               case "h4":
-                return <h4 className="">{props.children}</h4>
+                return <Heading as={`h4`} pl={5} pr={5}>{props.children}</Heading>
               
       
               case "blockquote":
@@ -112,7 +112,7 @@ const serializers = {
     //     }
     //     return <ol>{props.children}</ol>;
     //   },
-    listItem: (props) => <Flex alignItems={`center`}><BsFillArrowRightCircleFill color="#1e9339" size={20}  />
+    listItem: (props) => <Flex ml={`5`} alignItems={`center`}><BsFillArrowRightCircleFill color="#1e9339" size={20}  />
     <Wrap spacing={0} w={`90%`}>
         <WrapItem>
         <Text  as={`list`} fontSize={`md`} ml={4}>{props.children}</Text>
