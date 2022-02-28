@@ -137,7 +137,7 @@ const serializers = {
                     <Wrap >
                         <WrapItem>
                  
-                    <Text  color={`#1e9339`}>More Information</Text>
+                    <Text  color={`#1e9339`}>{children}</Text>
                         {/*<ExternalLinkIcon mx='2px' />*/}
                         </WrapItem>
                     </Wrap>
