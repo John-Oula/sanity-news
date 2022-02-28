@@ -48,7 +48,9 @@ const serializers = {
         block(props) {
             switch (props.node.style) {
               case "h1":
-                return <Flex bgColor={`#ffdb58`} pl={5} mt={5} mb={5} alignItems={`center`}><Heading as={`h1`} mr={5} >{props.children}</Heading><BsFillArrowRightCircleFill color="#000000" size={20}  /> </Flex>
+                return <Flex bgColor={`#ffdb58`} pl={5} mt={5} mb={5} alignItems={`center`}><Heading as={`h1`} mr={5} >{props.children}</Heading>
+                
+                 </Flex>
       
               case "h2":
                 return <h2 className="">{props.children}</h2>
