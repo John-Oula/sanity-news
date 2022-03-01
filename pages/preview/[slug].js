@@ -54,8 +54,8 @@ const postQuery = `*[_type == "post" && slug.current == $slug][0]{
     const pages = await getClient().fetch(allSlugsQuery)
   
     return {
-      paths: pages.map((slug) => `/preview/${slug}`),
-      fallback: true,
+      paths: pages.map((slug) => `/preview/${slug}`)  || [],
+      fallback: false,
     }
   }
   
