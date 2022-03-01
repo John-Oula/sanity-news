@@ -116,4 +116,5 @@ blockquote {
 .table-form .table-title{
   border-bottom: #d6d9dc 1px solid;
   border-top: #d6d9dc 1px solid;
+  width: 100%;
 }
