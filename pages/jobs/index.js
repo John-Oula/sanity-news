@@ -36,7 +36,7 @@ export async function getServerSideProps(context) {
     const urlArray = context.req.url.split('/')
     const slug = urlArray[urlArray.length-1]
 
-    const query = `*[_type == "category" && slug.current == "${slug}"]{
+    const query = `*[_type == "category" && slug.current == "jobs"]{
   "posts": *[_type == "post" && references(^._id)]{
               title,slug,body,_id,
                   "category":category->title,
