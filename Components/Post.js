@@ -11,7 +11,7 @@ function Post({data}) {
     return (
         <Box borderBottom={`solid`} p={3} borderBottomWidth={`1px`} borderColor={` #d6d9dc`}
            >
-            <Heading color={`#287b4f`} mb={3} size={`sm`} as={`h5`}><Link href={`/post/${data.slug.current}`}
+            <Heading color={`#287b4f`} mb={3} size={`sm`} as={`h5`}><Link href={`/post/${data.slug?.current}`}
                                                         passHref>{data?.title}</Link></Heading>
             <Flex alignItems={`center`}>
                 <TimeIcon mr={3}/>
