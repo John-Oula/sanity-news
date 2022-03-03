@@ -6,12 +6,14 @@ import { newTheme } from '../theme/theme';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from "../Components/Layout";
 import ContextWrapper from "../Components/ContextWrapper";
+import ModalContextWrapper from "../Components/ModalContextWrapper";
 import 'nextjs-breadcrumbs/dist/index.css'
 
 function MyApp({ Component, pageProps }) {
     return (
         <>
             <ContextWrapper>
+            <ModalContextWrapper>
                 <ChakraProvider theme={newTheme}>
 
 
@@ -23,6 +25,7 @@ function MyApp({ Component, pageProps }) {
 
 
                 </ChakraProvider>
+                </ModalContextWrapper>
             </ContextWrapper>
         </>
     )

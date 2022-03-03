@@ -13,19 +13,48 @@ import {
     SimpleGrid,
     Spinner,
     Spacer,
-    Text
+    Text,
+    ModalContextProvider
 } from "@chakra-ui/react";
 import { AiOutlineClose } from 'react-icons/ai';
 
 import React, {useContext, useEffect,  useState} from "react";
 import NestedLayout from "../../../Components/NestedLayout";
+import Article from "../../../Components/Article";
 import DirectoryNavbar from "../../../Components/DirectoryNavbar";
 import {ChevronDownIcon, TimeIcon} from "@chakra-ui/icons";
 import Moment from "react-moment";
 import Card from "../../../Components/Card";
 import SearchContext from "../../../contexts/SearchContext";
-import CircleFilter from "../../../Components/CircleFilter";
 
+import CircleFilter from "../../../Components/CircleFilter";
+import {Modal} from "react-bootstrap";
+import ModalContext from "../../../contexts/ModalContext";
+import ModalCard from "../../../Components/ModalCard";
+
+
+function ModalPopup(props) {
+  const {post} = useContext(ModalContext)
+
+
+  return (
+      <Modal
+          {...props}
+          size="xl"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+          animation={`true`}
+          className={`event-popup`}
+      >
+
+          <Modal.Body>
+              <ModalCard data={props.post} />
+          {/* <RichText richText={richText} /> */}
+          </Modal.Body>
+
+      </Modal>
+  );
+}
 
 export default function BusinessDirectory({posts}) {
     const {searchResults, setSearchResults, searching, message,setMessage} = useContext(SearchContext)
@@ -39,8 +68,10 @@ export default function BusinessDirectory({posts}) {
     const [selectCountry,setSelectCountry] = useState(null)
     const [selectCity,setSelectCity] = useState(null)
     const [selectCategory,setSelectCategory] = useState(null)
-
-
+    const {modalShow, setModalShow,post} = useContext(ModalContext)
+    const payload = {
+      data: post
+    }
 
     const handleFilterSearch = async () =>{
       const filter = {
@@ -94,7 +125,19 @@ export default function BusinessDirectory({posts}) {
     },[])
 
     return(
-        <Container mt={7}  maxW='container.xl' centerContent>
+       
+          <Container mt={7}  maxW='container.xl' centerContent>
+                      <>
+                <ModalPopup
+                    // loading={loading}
+                    show={modalShow}
+                    // error={error}
+                    post={post}
+                    onHide={() => setModalShow(false)}
+                    // richText={posts?.post?.body}
+                />
+
+            </>
 <NestedLayout>
             <Flex mb={10} w={`100%`} flexDirection={[`column`,`column`,`row`,`row`,`row`,]}>
                 <Flex w={[`100%`,`100%`,`100%`,`100%`,`100%`,]}>
@@ -258,6 +301,7 @@ export default function BusinessDirectory({posts}) {
             </Flex>
 </NestedLayout>
         </Container>
+      
     )
 }
 

@@ -1,15 +1,15 @@
-import React ,{useState}from 'react';
+import React ,{useContext, useState}from 'react';
 import {Box, Button, Image} from "@chakra-ui/react";
 import {RichText, toPlainText, urlFor} from "../sanity";
+import ModalContext from '../contexts/ModalContext';
 
 function Card({post}) {
     const [extend ,setExtend] = useState();
+    const {modalShow, setModalShow ,setPost} = useContext(ModalContext)
 
     const handleClick = () =>{
-        if(extend)
-            setExtend(false)
-        else
-            setExtend(true)
+        setPost(post)
+        setModalShow(true)
     }
 
 
@@ -59,7 +59,7 @@ function Card({post}) {
                 </Box>
 
                 <Button mt={2} w={`100%`} bgColor={`#ffdb58`}
-                        onClick={handleClick}> {extend ? "Less" : "More"} </Button>
+                        onClick={handleClick}>More </Button>
             </Box>
         </Box>
     );

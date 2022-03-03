@@ -11,7 +11,7 @@ import {createPreviewSubscriptionHook, createClient , createCurrentUserHook} fro
 import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 import PortableText from '@sanity/block-content-to-react'
 
-import { Flex, Wrap, WrapItem, LinkOverlay, Link, Heading, Spacer, Circle, Text, Button, LinkBox } from "@chakra-ui/react";
+import { Flex,Center, Wrap, WrapItem, LinkOverlay, Link, Heading, Spacer, Circle, Text, Button, LinkBox } from "@chakra-ui/react";
 
 const config = {
     projectId: 'y90icmhk',
@@ -104,6 +104,13 @@ const serializers = {
 
 
             return (<InlineVideo url={node} />)
+        },
+        googleDrive: ({ node }) => {
+
+
+            return (<Center>
+                <iframe src={node.url} width="640" height="480" allow="autoplay"></iframe>
+            </Center>)
         },
         image: ({ node }) => {
 
