@@ -22,8 +22,8 @@ function Posts({posts}) {
                                 </Flex>
                             </Box>
                             :
-                            <Center h={`100%`}>
-                    <Heading as={`h3`} size={`md`}  className={`coming-soon`} >Coming Soon!</Heading>
+                            <Center>
+                    <Heading as={`h3`} size={`md`} className={`coming-soon`} >Coming Soon!</Heading>
                 </Center>}
                         </>
             </NestedLayout>
@@ -40,7 +40,7 @@ export async function getServerSideProps(context) {
     const urlArray = context.req.url.split('/')
     const slug = urlArray[urlArray.length-1]
 
-    const query = `*[_type == "category" && slug.current == "jobs"]{
+    const query = `*[_type == "category" && slug.current == "events"]{
   "posts": *[_type == "post" && references(^._id)]{
               title,slug,body,_id,
                   "category":category->title,

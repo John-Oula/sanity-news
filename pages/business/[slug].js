@@ -1,5 +1,5 @@
 import {client} from "../../sanity";
-import {Container, Flex} from "@chakra-ui/react";
+import {Container,Center, Heading, Flex} from "@chakra-ui/react";
 import Article from "../../Components/Article";
 import React from "react";
 import NestedLayout from "../../Components/NestedLayout";
@@ -24,13 +24,14 @@ export default function BlogPost({data}) {
             <Flex w={`100%`} flexDirection={[`column`,`column`,`row`,`row`,`row`,]}>
                 <Flex justifyContent={`center`} alignItems={`center`} w={[`100%`,`100%`,`100%`,`100%`,`100%`,]}>
 
-                    <Article data={data} />
+                   { !data === null ? <Article data={data} />
+                   :
+
+                    <Center  h={`100%`} >
+                    <Heading as={`h3`} size={`md`} className={`coming-soon`} >Coming Soon!</Heading>
+                </Center>}
                 </Flex>
-                {/*<Flex >*/}
-
-                {/*    <Column />*/}
-
-                {/*</Flex>*/}
+              
 
             </Flex>
 </NestedLayout>

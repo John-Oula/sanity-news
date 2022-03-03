@@ -8,6 +8,9 @@ body {
 .social-icons{
   border-radius: 0pt;
 }
+.coming-soon{
+  color: #1e9339;
+}
 a {
 
   text-decoration: none !important ;

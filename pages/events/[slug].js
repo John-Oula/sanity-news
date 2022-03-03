@@ -22,7 +22,7 @@ export default function BlogPost({data}) {
         <Container mt={7}  maxW='container.xl' centerContent>
 <NestedLayout>
             <Flex w={`100%`} flexDirection={[`column`,`column`,`row`,`row`,`row`,]}>
-                <Flex justifyContent={`center`} alignItems={`center`} w={[`100%`,`100%`,`100%`,`100%`,`100%`,]}>
+                <Flex w={[`100%`,`100%`,`100%`,`100%`,`100%`,]}>
 
                     <Article data={data} />
                 </Flex>
