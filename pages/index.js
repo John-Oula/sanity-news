@@ -72,7 +72,14 @@ export async function getServerSideProps() {
                   "image":mainImage,
                         "category_slug":category->slug
                        }}`)
-    const carousel = await client.fetch(`*[_type == "imageSlider"]`)
+    const carousel = await client.fetch(`*[_type == "imageSlider"][0]{
+        carousel[]{
+          image{
+          "url":asset->url
+        }
+        }
+      }`)
+    
     const hero = await client.fetch(`*[_type == "hero"]`)
     if (!posts.length) {
         return {
