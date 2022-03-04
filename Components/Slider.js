@@ -14,13 +14,13 @@ function Slider({images}) {
     return (
 
             <Carousel infiniteLoop={true}  autoPlay={true}  showThumbs={false}>
-                 
+              
                 {
                     images?.carousel.map((each) =>{
                         return(
 
                           <>
-                            <Center w={`100%`} overflow={`hidden`} h={`500px`} >
+                            
                             { each.image?.url.split('/')[ each.image?.url.split('/').length - 1].split('.')[1] === 'mp4' ?
                                    <video loop={true} key={'slider_'+ each?.url}   src={each.image?.url} autoPlay={true} w={`100%`} h={`auto`} /> 
                                 :
@@ -31,7 +31,7 @@ function Slider({images}) {
 
                                 </>
                             }
-                                   </Center>
+                                   
                           </>
 
                         )

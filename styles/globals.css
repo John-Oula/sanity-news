@@ -11,6 +11,9 @@ body {
 .coming-soon{
   color: #1e9339;
 }
+.carousel.carousel-slider {
+  height: 500px;
+}
 a {
 
   text-decoration: none !important ;
