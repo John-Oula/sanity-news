@@ -64,8 +64,12 @@ nav{
 }
 
 
-.article img{
+.article.right img {
   float: right;
+}
+
+.article.left img {
+  float: left;
 }
 blockquote {
   font-family: monospace !important ;
