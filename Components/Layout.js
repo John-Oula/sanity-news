@@ -94,14 +94,21 @@ function Layout({ children }) {
                                     <LinkOverlay isExternal href='https://www.facebook.com/TrueNorth034'>
                                     <SocialIcon  fgColor='#000000' bgColor='#ffdb58' style={{ height: 30, width: 30 , borderRadius: '0px'}} network='facebook' />
                                     </LinkOverlay>
+                                    </LinkBox>
+                                    <LinkBox as='button'  >
+
                                     <LinkOverlay isExternal href={`https://www.youtube.com/channel/UCjOH2QfkXLT23StERjI9Yxg`}>
                                     <SocialIcon fgColor='#000000' bgColor='#ffdb58' style={{ height: 30, width: 30 , borderRadius: '0px'}}  network='youtube' />
                                     </LinkOverlay>
+                                    </LinkBox>
+                                    <LinkBox as='button'  >
+
                                     <LinkOverlay isExternal href={`https://www.instagram.com/truenorth034/`}>
                                     <SocialIcon fgColor='#000000' bgColor='#ffdb58' style={{ height: 30, width: 30 , borderRadius: '0px'}}  network='instagram' />
                                     </LinkOverlay>
+                                    </LinkBox>
                                     
-                                </LinkBox>
+                              
 
 
                             </Flex>

@@ -1,11 +1,13 @@
 import React from 'react';
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex,LinkBox, LinkOverlay , Spacer , Heading, Text } from "@chakra-ui/react";
 import { TimeIcon } from "@chakra-ui/icons";
 import Moment from "react-moment";
 import { RichText, toPlainText } from "../sanity";
 import { useRouter } from 'next/router';
 import { FacebookIcon, FacebookShareButton, WhatsappShareButton, WhatsappIcon, EmailShareButton, EmailIcon, LinkedinIcon, TwitterIcon } from "react-share";
 import { AiOutlineClockCircle } from 'react-icons/ai';
+var { SocialIcon } = require('react-social-icons');
+
 
 function Article({ data }) {
     const router = useRouter()
@@ -41,7 +43,22 @@ function Article({ data }) {
                         <WhatsappShareButton url={`https://www.truenorth-educationcareerhub.eu${router.route}`} title={data?.post?.title} >
                             <WhatsappIcon size={32} round={false} />
                         </WhatsappShareButton>
-                    </Flex>
+                    <Spacer />
+                                <LinkBox as='div'  >
+                                   
+                                   
+                                    <LinkOverlay isExternal href={`https://www.instagram.com/truenorth034/`}>
+                                    <SocialIcon fgColor='#000000' bgColor='#ffffff' style={{ height: 34, width: 34 , borderRadius: '0px'}}  network='instagram' />
+                                    </LinkOverlay>
+                                    
+                                </LinkBox>
+                                <LinkBox as='div'  >
+                                <LinkOverlay isExternal href={`https://www.youtube.com/channel/UCjOH2QfkXLT23StERjI9Yxg`}>
+                                    <SocialIcon fgColor='red' bgColor='#ffffff' style={{ height: 34, width: 34 , borderRadius: '0px'}}  network='youtube' />
+                                    </LinkOverlay>
+                                    </LinkBox>
+
+                            </Flex>
                 </Flex>
             </Flex>
 
