@@ -188,6 +188,10 @@ const serializers = {
 
             return (<Text as={`span`} color={props.mark.hex}>{props?.children}</Text>)
         },
+        flex: (props) => {
+
+            return (<Flex >{props?.children}</Flex>)
+        },
         backgroundColor: (props) => {
             console.log(props)
             return (<Text as={`span`} bgColor={props.mark.hex}>{props?.children}</Text>)

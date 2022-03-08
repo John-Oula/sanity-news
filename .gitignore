@@ -18,7 +18,7 @@ git-auto.sh
 # production
 /build
 
-/pages/preview
+
 
 # misc
 .DS_Store
