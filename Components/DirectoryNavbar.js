@@ -73,8 +73,9 @@ const DirectoryNavbar = () => {
                                        
                                     </Flex>
                                 
-                                    <Spacer/>
-                                    <Flex textAlign={`flex-end`} p={2} flexGrow={1}>
+                                    
+                                    <Flex ml={`auto`} mr={0} textAlign={`flex-end`} p={2} >
+                                        <Spacer/>
                                         <form onSubmit={handleSearch}>
                                             <InputGroup>
                                                 <InputLeftElement

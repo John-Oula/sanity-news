@@ -28,7 +28,6 @@ import Moment from "react-moment";
 import Card from "../../../Components/Card";
 import SearchContext from "../../../contexts/SearchContext";
 
-import CircleFilter from "../../../Components/CircleFilter";
 import {Modal} from "react-bootstrap";
 import ModalContext from "../../../contexts/ModalContext";
 import ModalCard from "../../../Components/ModalCard";
@@ -250,7 +249,6 @@ export default function BusinessDirectory({posts}) {
 <Button onClick={handleFilterSearch} bgColor={`#1e9339`} color={`white`}>Apply</Button>
 </Flex>
               </Stack>
-                                <CircleFilter state={true} data={posts}/>
 
                                 <Center mt={10}  >
                                     {searching &&   <Spinner/>}
