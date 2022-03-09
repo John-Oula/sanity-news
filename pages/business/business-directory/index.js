@@ -12,9 +12,10 @@ import {
     MenuList,
     SimpleGrid,
     Spinner,
-    Spacer,
+    Stack,
     Text,
-    ModalContextProvider
+    ModalContextProvider,
+    HStack
 } from "@chakra-ui/react";
 import { AiOutlineClose } from 'react-icons/ai';
 
@@ -157,7 +158,7 @@ export default function BusinessDirectory({posts}) {
 
                                 <RichText posts={posts?.post?.body} />
                                 <DirectoryNavbar  />
-          <Flex alignItems={`center`}>
+          <Stack  direction={['column', 'row']} spacing='4pt'>
           <Flex alignItems={`center`}>
           <Menu>
   {({ isOpen }) => (
@@ -248,7 +249,7 @@ export default function BusinessDirectory({posts}) {
 
 <Button onClick={handleFilterSearch} bgColor={`#1e9339`} color={`white`}>Apply</Button>
 </Flex>
-              </Flex>
+              </Stack>
                                 <CircleFilter state={true} data={posts}/>
 
                                 <Center mt={10}  >
