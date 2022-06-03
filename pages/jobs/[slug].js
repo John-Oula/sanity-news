@@ -3,7 +3,6 @@ import {Container, Flex} from "@chakra-ui/react";
 import Article from "../../Components/Article";
 import React from "react";
 import NestedLayout from "../../Components/NestedLayout";
-
 const postQuery = `*[_type == "post" && slug.current == $slug][0]{
   ...,
   body[]{

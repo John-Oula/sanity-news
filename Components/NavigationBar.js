@@ -45,16 +45,8 @@ const NavigationBar = ({ nav }) => {
 
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav>
-                                <Flex
-                                    flexDirection={[`column`, `column`, `row`, `row`, `row`,]}>
-                                    <Link href={`/`}>
-                                        <Flex
-                                            cursor={`pointer`}
-                                            fontSize={`sm`}
-                                            borderRadius={`0px`}
-                                            // borderColor={`#1e9339`} borderLeftWidth={`0.5px`} borderRightWidth={`0.5px`}
-                                            p={[5, 4, 0, 3, 3]} bgColor={`#1e9339`} alignItems={'center'} color={`#ffffff`}
-                                        ><AiFillHome /></Flex></Link>
+                                <Flex  flexDirection={[`column`, `column`, `row`, `row`, `row`,]}>
+                                    
                                     {
                                         nav?.map((each, index) => {
                                             return (

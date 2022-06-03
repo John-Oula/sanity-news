@@ -61,9 +61,6 @@ export default function Home({ posts, carousel, hero}) {
 
 export async function getServerSideProps() {
 
-
-
-
     const posts = await client.fetch(`
 *[_type == "heading" && featured != false] {title,position,
 "posts": *[_type == "post" && references(^._id)]{
