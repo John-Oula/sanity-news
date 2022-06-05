@@ -75,7 +75,7 @@ const NavigationBar = ({ nav }) => {
                                                                             alignItems={'center'}
                                                                             color={`#ffffff`}>
                                                                     <Flex alignItems={`center`}>
-                                                                        <Image p={1} src={urlFor(each?.icon).url()} width={`24px`} height={`24px`} fallbackSrc={`https://via.placeholder.com/200`} />
+                                                                        { each?.icon && <Image p={1} src={urlFor(each?.icon).url()} width={`24px`} height={`24px`} fallbackSrc={`https://via.placeholder.com/200`} />}
                                                                         <Link
                                                                             href={`/${each?.slug?.current}`}>{each?.title}</Link><ChevronDownIcon
                                                                         ml={2}/>
